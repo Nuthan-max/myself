@@ -18,10 +18,10 @@ export default function Education({ onSelectCertificate }) {
         <div
           style={{
             position: 'relative',
-            maxWidth: '1000px',
+            maxWidth: '960px',
             margin: '0 auto',
             paddingLeft: 'clamp(1rem, 3vw, 2.5rem)',
-            borderLeft: '2px solid var(--border-color)'
+            borderLeft: '2px solid rgba(255, 255, 255, 0.08)'
           }}
         >
           {educationData.map((item, index) => (
@@ -29,7 +29,7 @@ export default function Education({ onSelectCertificate }) {
               key={item.id}
               style={{
                 position: 'relative',
-                marginBottom: index === educationData.length - 1 ? 0 : 'clamp(3rem, 6vw, 5rem)'
+                marginBottom: index === educationData.length - 1 ? 0 : 'clamp(2.5rem, 5vw, 4rem)'
               }}
             >
               {/* Timeline Indicator Dot */}
@@ -37,13 +37,13 @@ export default function Education({ onSelectCertificate }) {
                 style={{
                   position: 'absolute',
                   left: 'calc(-1 * clamp(1rem, 3vw, 2.5rem) - 7px)',
-                  top: '6px',
+                  top: '8px',
                   width: '12px',
                   height: '12px',
                   borderRadius: '50%',
-                  backgroundColor: index === 0 ? 'var(--accent-lime)' : 'var(--text-primary)',
-                  border: '3px solid var(--bg-primary)',
-                  boxShadow: '0 0 0 2px var(--border-color)'
+                  backgroundColor: index === 0 ? '#D4FF00' : 'rgba(255, 255, 255, 0.4)',
+                  boxShadow: index === 0 ? '0 0 10px #D4FF00' : 'none',
+                  border: '2px solid #08090C'
                 }}
               />
 
@@ -51,8 +51,8 @@ export default function Education({ onSelectCertificate }) {
               <div
                 className="spotlight-card"
                 style={{
-                  padding: 'clamp(1.5rem, 3.5vw, 2.5rem)',
-                  backgroundColor: '#FFFFFF',
+                  padding: 'clamp(1.5rem, 3vw, 2.25rem)',
+                  backgroundColor: 'var(--bg-card)',
                   border: '1px solid var(--border-color)',
                   borderRadius: 'var(--radius-xl)'
                 }}
@@ -65,32 +65,32 @@ export default function Education({ onSelectCertificate }) {
                     justifyContent: 'space-between',
                     alignItems: 'flex-start',
                     gap: '1rem',
-                    marginBottom: '1rem'
+                    marginBottom: '0.85rem'
                   }}
                 >
                   <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem' }}>
-                      <span className="tag-tech" style={{ backgroundColor: index === 0 ? 'rgba(215, 241, 113, 0.3)' : 'rgba(23, 23, 23, 0.05)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                      <span className="tag-tech" style={{ backgroundColor: index === 0 ? 'rgba(212, 255, 0, 0.15)' : 'rgba(255, 255, 255, 0.04)', borderColor: index === 0 ? 'rgba(212, 255, 0, 0.3)' : 'var(--border-color)', color: index === 0 ? '#D4FF00' : 'inherit' }}>
                         <GraduationCap size={13} />
                         {item.badge}
                       </span>
-                      <span className="label-mono" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="label-mono" style={{ color: '#8E94A0' }}>
                         {item.status}
                       </span>
                     </div>
 
                     <h3
                       className="heading-card"
-                      style={{ fontSize: 'clamp(1.3rem, 2.2vw, 1.75rem)', color: 'var(--text-primary)' }}
+                      style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.55rem)', color: '#F4F5F8' }}
                     >
                       {item.degree}
                     </h3>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.25rem' }}>
-                      <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{item.institution}</span>
-                      <span style={{ color: 'var(--text-muted)' }}>•</span>
-                      <span style={{ color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.88rem' }}>
-                        <MapPin size={13} /> {item.location}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', marginTop: '0.25rem', fontSize: '0.88rem' }}>
+                      <span style={{ fontWeight: 600, color: '#F4F5F8' }}>{item.institution}</span>
+                      <span style={{ color: '#565C68' }}>•</span>
+                      <span style={{ color: '#8E94A0', display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+                        <MapPin size={12} /> {item.location}
                       </span>
                     </div>
                   </div>
@@ -100,26 +100,27 @@ export default function Education({ onSelectCertificate }) {
                     <div
                       className="label-mono"
                       style={{
-                        padding: '0.4rem 0.85rem',
-                        backgroundColor: 'var(--bg-primary)',
+                        padding: '0.35rem 0.75rem',
+                        backgroundColor: 'rgba(255, 255, 255, 0.04)',
                         borderRadius: 'var(--radius-pill)',
-                        border: '1px solid var(--border-color)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '0.4rem'
+                        gap: '0.35rem',
+                        color: '#C5C9D3'
                       }}
                     >
-                      <Calendar size={13} />
+                      <Calendar size={12} />
                       {item.period}
                     </div>
                     {item.achievement && (
                       <div
                         className="font-interface"
                         style={{
-                          fontSize: '1.25rem',
-                          fontWeight: 800,
-                          color: '#25825d',
-                          marginTop: '0.5rem'
+                          fontSize: '1.15rem',
+                          fontWeight: 750,
+                          color: '#D4FF00',
+                          marginTop: '0.4rem'
                         }}
                       >
                         {item.achievement}
@@ -132,33 +133,33 @@ export default function Education({ onSelectCertificate }) {
                 <p
                   className="body-regular"
                   style={{
-                    fontSize: '0.98rem',
-                    lineHeight: 1.7,
-                    color: 'var(--text-secondary)',
-                    marginBottom: '1.5rem'
+                    fontSize: '0.94rem',
+                    lineHeight: 1.65,
+                    color: '#8E94A0',
+                    marginBottom: '1.25rem'
                   }}
                 >
                   {item.description}
                 </p>
 
                 {/* Coursework & Milestones */}
-                <div style={{ marginBottom: '1.75rem' }}>
-                  <div className="label-mono" style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '0.6rem' }}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <div className="label-mono" style={{ fontSize: '0.66rem', color: '#565C68', marginBottom: '0.5rem' }}>
                     KEY HIGHLIGHTS &amp; CURRICULUM
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                     {item.highlights.map((hl, idx) => (
                       <div
                         key={idx}
                         style={{
                           display: 'flex',
                           alignItems: 'flex-start',
-                          gap: '0.6rem',
-                          fontSize: '0.92rem',
-                          color: 'var(--text-primary)'
+                          gap: '0.5rem',
+                          fontSize: '0.88rem',
+                          color: '#C5C9D3'
                         }}
                       >
-                        <span style={{ color: 'var(--accent-lavender)', fontSize: '1rem', lineHeight: '1.2' }}>▸</span>
+                        <span style={{ color: '#00F0FF', fontSize: '0.9rem', lineHeight: '1.2' }}>▸</span>
                         <span>{hl}</span>
                       </div>
                     ))}
@@ -168,18 +169,18 @@ export default function Education({ onSelectCertificate }) {
                 {/* Certificate Verification Trigger */}
                 <div
                   style={{
-                    paddingTop: '1.25rem',
-                    borderTop: '1px solid var(--border-color)',
+                    paddingTop: '1rem',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    gap: '1rem'
+                    gap: '0.75rem'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <FileCheck size={16} color="#25825d" />
-                    <span className="label-mono" style={{ fontSize: '0.72rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                    <FileCheck size={15} color="#D4FF00" />
+                    <span className="label-mono" style={{ fontSize: '0.7rem', color: '#8E94A0' }}>
                       {item.certificateTitle}
                     </span>
                   </div>
@@ -187,7 +188,6 @@ export default function Education({ onSelectCertificate }) {
                   <button
                     type="button"
                     onClick={() => {
-                      // Map to certificate object
                       const certId = item.id === 'higher-secondary' ? 'cert-academic-puc' : item.id === 'secondary' ? 'cert-academic-cbse' : null;
                       if (onSelectCertificate && certId) {
                         onSelectCertificate(certId);
@@ -195,13 +195,13 @@ export default function Education({ onSelectCertificate }) {
                     }}
                     className="btn-secondary"
                     style={{
-                      padding: '0.5rem 1rem',
-                      fontSize: '0.82rem',
+                      padding: '0.45rem 0.9rem',
+                      fontSize: '0.78rem',
                       borderRadius: 'var(--radius-pill)'
                     }}
                   >
                     View Verified Record
-                    <ChevronRight size={14} />
+                    <ChevronRight size={13} />
                   </button>
                 </div>
               </div>

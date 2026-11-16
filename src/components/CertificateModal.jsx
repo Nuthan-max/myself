@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Download, ExternalLink, ShieldCheck, ZoomIn, ZoomOut } from 'lucide-react';
+import { X, Download, ShieldCheck, ZoomIn, ZoomOut } from 'lucide-react';
 
 export default function CertificateModal({ certificate, onClose }) {
   const [zoom, setZoom] = useState(1);
@@ -26,7 +26,9 @@ export default function CertificateModal({ certificate, onClose }) {
         style={{
           maxWidth: '920px',
           padding: 'clamp(1.5rem, 3vw, 2.5rem)',
-          backgroundColor: '#FFFFFF'
+          backgroundColor: 'var(--bg-card)',
+          border: '1px solid var(--border-color)',
+          color: '#F4F5F8'
         }}
       >
         {/* Modal Header */}
@@ -36,54 +38,54 @@ export default function CertificateModal({ certificate, onClose }) {
             justifyContent: 'space-between',
             alignItems: 'flex-start',
             gap: '1rem',
-            marginBottom: '1.5rem',
-            borderBottom: '1px solid var(--border-color)',
+            marginBottom: '1.25rem',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             paddingBottom: '1rem'
           }}
         >
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem' }}>
-              <span className="tag-tech" style={{ backgroundColor: 'rgba(215, 241, 113, 0.25)', borderColor: '#D7F171' }}>
-                <ShieldCheck size={14} color="#171717" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+              <span className="tag-tech" style={{ backgroundColor: 'rgba(212, 255, 0, 0.1)', borderColor: 'rgba(212, 255, 0, 0.3)', color: '#D4FF00' }}>
+                <ShieldCheck size={13} color="#D4FF00" />
                 {certificate.verificationStatus}
               </span>
-              <span className="label-mono">{certificate.category}</span>
+              <span className="label-mono" style={{ color: '#888' }}>{certificate.category}</span>
             </div>
             <h3
               className="heading-card"
-              style={{ fontSize: '1.4rem', color: 'var(--text-primary)' }}
+              style={{ fontSize: '1.35rem', color: '#F4F5F8' }}
             >
               {certificate.title}
             </h3>
-            <p className="body-regular" style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+            <p className="body-regular" style={{ fontSize: '0.85rem', color: '#8E94A0' }}>
               Issued by {certificate.issuer} • {certificate.year}
             </p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
             <button
-              onClick={() => setZoom((z) => (z === 1 ? 1.4 : 1))}
+              onClick={() => setZoom((z) => (z === 1 ? 1.3 : 1))}
               className="btn-secondary"
-              style={{ padding: '0.5rem', borderRadius: '50%' }}
+              style={{ padding: '0.45rem', borderRadius: '50%' }}
               title="Toggle Zoom"
             >
-              {zoom === 1 ? <ZoomIn size={18} /> : <ZoomOut size={18} />}
+              {zoom === 1 ? <ZoomIn size={16} /> : <ZoomOut size={16} />}
             </button>
             <button
               onClick={handleDownload}
               className="btn-secondary"
-              style={{ padding: '0.5rem', borderRadius: '50%' }}
+              style={{ padding: '0.45rem', borderRadius: '50%' }}
               title="Download Certificate"
             >
-              <Download size={18} />
+              <Download size={16} />
             </button>
             <button
               onClick={onClose}
               className="btn-secondary"
-              style={{ padding: '0.5rem', borderRadius: '50%' }}
+              style={{ padding: '0.45rem', borderRadius: '50%' }}
               title="Close modal"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
           </div>
         </div>
@@ -91,9 +93,9 @@ export default function CertificateModal({ certificate, onClose }) {
         {/* Certificate Display Area */}
         <div
           style={{
-            backgroundColor: '#F7F6F2',
+            backgroundColor: '#090B0E',
             borderRadius: 'var(--radius-lg)',
-            border: '1px solid var(--border-color)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             padding: '1.25rem',
             overflow: 'auto',
             maxHeight: '58vh',
@@ -108,8 +110,8 @@ export default function CertificateModal({ certificate, onClose }) {
             style={{
               maxWidth: '100%',
               height: 'auto',
-              borderRadius: '8px',
-              boxShadow: '0 12px 30px rgba(0,0,0,0.08)',
+              borderRadius: '6px',
+              boxShadow: '0 12px 36px rgba(0,0,0,0.6)',
               transform: `scale(${zoom})`,
               transformOrigin: 'center center',
               transition: 'transform 0.3s ease'
@@ -125,23 +127,23 @@ export default function CertificateModal({ certificate, onClose }) {
             justifyContent: 'space-between',
             alignItems: 'center',
             gap: '1rem',
-            marginTop: '1.5rem',
+            marginTop: '1.25rem',
             paddingTop: '1rem',
-            borderTop: '1px solid var(--border-color)'
+            borderTop: '1px solid rgba(255, 255, 255, 0.08)'
           }}
         >
           <div>
-            <span className="label-mono" style={{ color: 'var(--text-muted)' }}>
+            <span className="label-mono" style={{ color: '#565C68' }}>
               OFFICIAL CREDENTIAL ID
             </span>
-            <p className="font-mono" style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+            <p className="font-mono" style={{ fontSize: '0.84rem', fontWeight: 600, color: '#D4FF00' }}>
               {certificate.credentialId}
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
-            <button onClick={handleDownload} className="btn-primary" style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}>
-              <Download size={15} /> Download Original Document
+          <div style={{ display: 'flex', gap: '0.65rem' }}>
+            <button onClick={handleDownload} className="btn-primary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.82rem' }}>
+              <Download size={14} /> Download Document
             </button>
           </div>
         </div>

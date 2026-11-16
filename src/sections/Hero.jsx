@@ -1,7 +1,8 @@
 import React from 'react';
-import { Download, ChevronRight, Cpu, Radio } from 'lucide-react';
+import { Download, ChevronRight, Terminal, Radio, ShieldCheck, Cpu } from 'lucide-react';
 import MagneticButton from '../components/MagneticButton';
 import HeroThreeCanvas from '../components/HeroThreeCanvas';
+import InteractiveLabDeck from '../components/InteractiveLabDeck';
 import { personalData } from '../data/personal';
 
 export default function Hero({ onDownloadCV }) {
@@ -13,13 +14,13 @@ export default function Hero({ onDownloadCV }) {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: 'calc(var(--header-height) + 1.5rem)',
-        paddingBottom: '3.5rem',
+        paddingTop: 'calc(var(--header-height) + 2rem)',
+        paddingBottom: '4rem',
         overflow: 'hidden',
         backgroundColor: 'var(--bg-primary)'
       }}
     >
-      {/* Three.js 3D Visual Mesh in Background */}
+      {/* Subtle Star/Signal Particles */}
       <HeroThreeCanvas />
 
       <div className="container" style={{ position: 'relative', zIndex: 1, width: '100%' }}>
@@ -31,25 +32,25 @@ export default function Hero({ onDownloadCV }) {
             alignItems: 'center'
           }}
         >
-          {/* Left Column (7 cols on desktop) */}
+          {/* Left Column: Kinetic Identity & Headline (7 cols) */}
           <div
             style={{
               gridColumn: 'span 12',
               display: 'flex',
               flexDirection: 'column',
-              gap: '1.4rem'
+              gap: '1.35rem'
             }}
             className="hero-left-col"
           >
-            {/* Small Introductory Badge */}
+            {/* Live System Badge */}
             <div
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.5rem',
+                gap: '0.6rem',
                 padding: '0.35rem 0.85rem',
-                backgroundColor: 'rgba(18, 19, 22, 0.04)',
-                border: '1px solid var(--border-color)',
+                backgroundColor: 'rgba(212, 255, 0, 0.08)',
+                border: '1px solid rgba(212, 255, 0, 0.3)',
                 borderRadius: 'var(--radius-pill)',
                 width: 'fit-content'
               }}
@@ -59,40 +60,50 @@ export default function Hero({ onDownloadCV }) {
                   width: '7px',
                   height: '7px',
                   borderRadius: '50%',
-                  backgroundColor: '#25825d',
-                  display: 'inline-block'
+                  backgroundColor: '#D4FF00',
+                  boxShadow: '0 0 8px #D4FF00'
                 }}
                 className="animate-pulse-subtle"
               />
-              <span className="label-mono" style={{ color: 'var(--text-primary)', letterSpacing: '0.08em' }}>
-                {personalData.tagline.toUpperCase()}
+              <span className="label-mono" style={{ color: '#D4FF00', letterSpacing: '0.08em' }}>
+                ECE UNDERGRADUATE // LOVELY PROFESSIONAL UNIVERSITY
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="display-hero">
-              Engineering intelligent hardware and computational systems.
+            <h1
+              className="display-hero"
+              style={{
+                fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)',
+                lineHeight: 1.12,
+                letterSpacing: '-0.03em',
+                color: '#F4F5F8'
+              }}
+            >
+              Engineering <span style={{ color: '#D4FF00' }}>hardware intelligence</span> into physical &amp; deep code.
             </h1>
 
-            {/* Supporting Text */}
+            {/* Supporting Description */}
             <p
               className="body-lead"
               style={{
-                maxWidth: '600px',
-                color: 'var(--text-secondary)'
+                maxWidth: '580px',
+                color: '#8E94A0',
+                fontSize: '1.02rem',
+                lineHeight: 1.65
               }}
             >
-              First-year undergraduate at <strong>{personalData.university}</strong>. Focused on bridging physical electronics with software — architecting embedded sensor nodes, circuit schematics, graph pathfinding simulations, and applied telemetry.
+              Bridging the gap between physical sensor physics and algorithmic logic. Designing PCB schematics, programming dual-core microcontrollers, and building dynamic computer vision telemetry.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTAs */}
             <div
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 gap: '0.85rem',
-                paddingTop: '0.25rem'
+                paddingTop: '0.2rem'
               }}
             >
               <MagneticButton
@@ -100,7 +111,7 @@ export default function Hero({ onDownloadCV }) {
                 className="btn-primary"
                 style={{ fontSize: '0.92rem', padding: '0.85rem 1.65rem' }}
               >
-                Explore Projects
+                Inspect Selected Projects
                 <ChevronRight size={15} />
               </MagneticButton>
 
@@ -110,157 +121,58 @@ export default function Hero({ onDownloadCV }) {
                 style={{ fontSize: '0.92rem', padding: '0.85rem 1.5rem' }}
               >
                 <Download size={15} />
-                Download Resume
+                Download Curriculum Vitae
               </MagneticButton>
             </div>
 
-            {/* Quick Metrics Bar */}
+            {/* Telemetry Metrics Row */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))',
                 gap: '1rem',
                 paddingTop: '1.25rem',
-                borderTop: '1px solid var(--border-color)',
-                marginTop: '0.5rem'
+                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                marginTop: '0.4rem'
               }}
             >
-              {personalData.stats.map((st) => (
+              {[
+                { val: '92%', label: 'HIGHER SECONDARY', sub: 'Academic Distinction' },
+                { val: '03+', label: 'CORE SYSTEMS', sub: 'Hardware & ML' },
+                { val: 'BYTE ME', label: 'HACKATHONS', sub: 'Hardware Lead' },
+                { val: 'AI + IoT', label: 'SPECIALIZATION', sub: 'Cyber-Physical' }
+              ].map((st) => (
                 <div key={st.label}>
                   <div
                     className="font-interface"
                     style={{
-                      fontSize: '1.45rem',
+                      fontSize: '1.35rem',
                       fontWeight: 750,
                       letterSpacing: '-0.02em',
-                      color: 'var(--text-primary)'
+                      color: '#F4F5F8'
                     }}
                   >
-                    {st.value}
+                    {st.val}
                   </div>
-                  <div className="label-mono" style={{ fontSize: '0.68rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
+                  <div className="label-mono" style={{ fontSize: '0.65rem', color: '#8E94A0', marginTop: '0.15rem' }}>
                     {st.label}
                   </div>
-                  <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
-                    {st.detail}
+                  <div style={{ fontSize: '0.72rem', color: '#565C68' }}>
+                    {st.sub}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Column (Hero Visual / Floating Technical Elements) */}
+          {/* Right Column: Live Interactive Hardware Studio (5 cols) */}
           <div
             style={{
-              gridColumn: 'span 12',
-              position: 'relative'
+              gridColumn: 'span 12'
             }}
             className="hero-right-col"
           >
-            <div
-              style={{
-                position: 'relative',
-                maxWidth: '430px',
-                margin: '0 auto'
-              }}
-            >
-              {/* Main Visual Image Card */}
-              <div
-                style={{
-                  borderRadius: 'var(--radius-xl)',
-                  overflow: 'hidden',
-                  border: '1px solid var(--border-color)',
-                  boxShadow: 'var(--shadow-medium)',
-                  backgroundColor: '#FFFFFF',
-                  position: 'relative'
-                }}
-              >
-                <img
-                  src="/gallery/portrait.svg"
-                  alt="Prathamesh Profile"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block'
-                  }}
-                />
-              </div>
-
-              {/* Floating Technical Badge 1: Top Left */}
-              <div
-                className="animate-float"
-                style={{
-                  position: 'absolute',
-                  top: '-16px',
-                  left: '-18px',
-                  padding: '0.65rem 1rem',
-                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid var(--border-color)',
-                  borderRadius: 'var(--radius-md)',
-                  boxShadow: 'var(--shadow-subtle)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.65rem'
-                }}
-              >
-                <div
-                  style={{
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '6px',
-                    backgroundColor: 'rgba(206, 234, 80, 0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <Cpu size={16} color="#111111" />
-                </div>
-                <div>
-                  <div className="label-mono" style={{ fontSize: '0.62rem' }}>FOCUS</div>
-                  <div style={{ fontSize: '0.82rem', fontWeight: 650, color: '#171717' }}>Embedded &amp; IoT</div>
-                </div>
-              </div>
-
-              {/* Floating Technical Badge 2: Bottom Right */}
-              <div
-                className="animate-float-alt"
-                style={{
-                  position: 'absolute',
-                  bottom: '-18px',
-                  right: '-16px',
-                  padding: '0.65rem 1rem',
-                  backgroundColor: '#0F1012',
-                  color: '#FFFFFF',
-                  borderRadius: 'var(--radius-md)',
-                  boxShadow: '0 12px 30px rgba(0,0,0,0.3)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.65rem'
-                }}
-              >
-                <div
-                  style={{
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '6px',
-                    backgroundColor: 'rgba(206, 234, 80, 0.2)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <Radio size={16} color="var(--accent-lime)" />
-                </div>
-                <div>
-                  <div className="label-mono" style={{ color: 'var(--accent-lime)', fontSize: '0.62rem' }}>TEAM BYTE ME</div>
-                  <div style={{ fontSize: '0.82rem', fontWeight: 650, color: '#F7F6F2' }}>Hackathon Unit</div>
-                </div>
-              </div>
-            </div>
+            <InteractiveLabDeck />
           </div>
         </div>
       </div>

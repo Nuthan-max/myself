@@ -17,7 +17,9 @@ export default function ProjectDetailModal({ project, onClose }) {
         style={{
           maxWidth: '920px',
           padding: 'clamp(1.5rem, 3vw, 2.5rem)',
-          backgroundColor: '#FFFFFF'
+          backgroundColor: 'var(--bg-card)',
+          border: '1px solid var(--border-color)',
+          color: '#F4F5F8'
         }}
       >
         {/* Header */}
@@ -27,22 +29,22 @@ export default function ProjectDetailModal({ project, onClose }) {
             justifyContent: 'space-between',
             alignItems: 'flex-start',
             gap: '1rem',
-            marginBottom: '1.5rem',
-            borderBottom: '1px solid var(--border-color)',
+            marginBottom: '1.25rem',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             paddingBottom: '1rem'
           }}
         >
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem' }}>
-              <span className="tag-tech" style={{ backgroundColor: 'rgba(215, 241, 113, 0.25)', borderColor: '#D7F171' }}>
-                Project {project.number}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
+              <span className="tag-tech" style={{ backgroundColor: 'rgba(212, 255, 0, 0.1)', borderColor: 'rgba(212, 255, 0, 0.3)', color: '#D4FF00' }}>
+                System {project.number}
               </span>
-              <span className="label-mono">{project.category}</span>
+              <span className="label-mono" style={{ color: '#888' }}>{project.category}</span>
             </div>
-            <h3 className="heading-card" style={{ fontSize: '1.75rem', color: 'var(--text-primary)' }}>
+            <h3 className="heading-card" style={{ fontSize: '1.55rem', color: '#F4F5F8' }}>
               {project.title}
             </h3>
-            <p className="body-regular" style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+            <p className="body-regular" style={{ fontSize: '0.9rem', color: '#8E94A0' }}>
               {project.subtitle}
             </p>
           </div>
@@ -50,21 +52,21 @@ export default function ProjectDetailModal({ project, onClose }) {
           <button
             onClick={onClose}
             className="btn-secondary"
-            style={{ padding: '0.5rem', borderRadius: '50%' }}
+            style={{ padding: '0.45rem', borderRadius: '50%' }}
             title="Close modal"
           >
-            <X size={18} />
+            <X size={16} />
           </button>
         </div>
 
         {/* Hero Visual */}
         <div
           style={{
-            backgroundColor: '#111111',
+            backgroundColor: '#090B0E',
             borderRadius: 'var(--radius-lg)',
             overflow: 'hidden',
-            marginBottom: '2rem',
-            border: '1px solid var(--border-color)'
+            marginBottom: '1.75rem',
+            border: '1px solid rgba(255, 255, 255, 0.08)'
           }}
         >
           <img
@@ -79,82 +81,83 @@ export default function ProjectDetailModal({ project, onClose }) {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
-            marginBottom: '2rem'
+            gap: '1.25rem',
+            marginBottom: '1.75rem'
           }}
         >
           <div
             style={{
-              padding: '1.5rem',
-              backgroundColor: '#F7F6F2',
+              padding: '1.25rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.02)',
               borderRadius: 'var(--radius-lg)',
-              border: '1px solid var(--border-color)'
+              border: '1px solid rgba(255, 255, 255, 0.06)'
             }}
           >
-            <span className="label-mono" style={{ color: '#ff4d4d', display: 'block', marginBottom: '0.5rem' }}>
+            <span className="label-mono" style={{ color: '#ff6b6b', display: 'block', marginBottom: '0.4rem' }}>
               ● PROBLEM STATEMENT
             </span>
-            <p className="body-regular" style={{ color: 'var(--text-primary)' }}>
+            <p className="body-regular" style={{ color: '#C5C9D3', fontSize: '0.88rem' }}>
               {project.problemStatement}
             </p>
           </div>
 
           <div
             style={{
-              padding: '1.5rem',
-              backgroundColor: '#F7F6F2',
+              padding: '1.25rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.02)',
               borderRadius: 'var(--radius-lg)',
-              border: '1px solid var(--border-color)'
+              border: '1px solid rgba(255, 255, 255, 0.06)'
             }}
           >
-            <span className="label-mono" style={{ color: '#25825d', display: 'block', marginBottom: '0.5rem' }}>
+            <span className="label-mono" style={{ color: '#D4FF00', display: 'block', marginBottom: '0.4rem' }}>
               ● ENGINEERED SOLUTION
             </span>
-            <p className="body-regular" style={{ color: 'var(--text-primary)' }}>
+            <p className="body-regular" style={{ color: '#C5C9D3', fontSize: '0.88rem' }}>
               {project.solution}
             </p>
           </div>
         </div>
 
         {/* System Architecture */}
-        <div style={{ marginBottom: '2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-            <Layers size={18} color="var(--accent-lavender)" />
-            <h4 className="heading-card" style={{ fontSize: '1.2rem' }}>
+        <div style={{ marginBottom: '1.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.85rem' }}>
+            <Layers size={16} color="#00F0FF" />
+            <h4 className="heading-card" style={{ fontSize: '1.1rem', color: '#F4F5F8' }}>
               System Architecture &amp; Methodology
             </h4>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
             {project.architecture.map((item, idx) => (
               <div
                 key={idx}
                 style={{
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '0.75rem',
-                  padding: '1rem',
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-color)',
+                  gap: '0.65rem',
+                  padding: '0.85rem 1rem',
+                  backgroundColor: 'rgba(255, 255, 255, 0.02)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)',
                   borderRadius: 'var(--radius-md)'
                 }}
               >
                 <div
                   style={{
-                    width: '24px',
-                    height: '24px',
+                    width: '22px',
+                    height: '22px',
                     borderRadius: '50%',
-                    backgroundColor: 'rgba(23, 23, 23, 0.05)',
+                    backgroundColor: 'rgba(212, 255, 0, 0.15)',
+                    color: '#D4FF00',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '0.75rem',
+                    fontSize: '0.72rem',
                     fontWeight: 700,
                     flexShrink: 0
                   }}
                 >
                   {idx + 1}
                 </div>
-                <p className="body-regular" style={{ color: 'var(--text-primary)', margin: 0 }}>
+                <p className="body-regular" style={{ color: '#C5C9D3', margin: 0, fontSize: '0.88rem' }}>
                   {item}
                 </p>
               </div>
@@ -162,34 +165,34 @@ export default function ProjectDetailModal({ project, onClose }) {
           </div>
         </div>
 
-        {/* Key Verified Results */}
-        <div style={{ marginBottom: '2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-            <CheckCircle2 size={18} color="#25825d" />
-            <h4 className="heading-card" style={{ fontSize: '1.2rem' }}>
+        {/* Results */}
+        <div style={{ marginBottom: '1.75rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.85rem' }}>
+            <CheckCircle2 size={16} color="#D4FF00" />
+            <h4 className="heading-card" style={{ fontSize: '1.1rem', color: '#F4F5F8' }}>
               Demonstrated Engineering Results
             </h4>
           </div>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
             {project.results.map((res, idx) => (
               <li
                 key={idx}
                 style={{
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '0.75rem',
-                  color: 'var(--text-secondary)',
-                  fontSize: '0.92rem'
+                  gap: '0.65rem',
+                  color: '#8E94A0',
+                  fontSize: '0.88rem'
                 }}
               >
-                <span style={{ color: '#D7F171', backgroundColor: '#111', width: '6px', height: '6px', borderRadius: '50%', marginTop: '0.55rem', flexShrink: 0 }} />
-                <span>{res}</span>
+                <span style={{ color: '#D4FF00', marginTop: '0.2rem' }}>▸</span>
+                <span style={{ color: '#C5C9D3' }}>{res}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Tech Stack Tags & Actions */}
+        {/* Tech Stack & Actions */}
         <div
           style={{
             display: 'flex',
@@ -197,33 +200,33 @@ export default function ProjectDetailModal({ project, onClose }) {
             justifyContent: 'space-between',
             alignItems: 'center',
             gap: '1rem',
-            paddingTop: '1.5rem',
-            borderTop: '1px solid var(--border-color)'
+            paddingTop: '1.25rem',
+            borderTop: '1px solid rgba(255, 255, 255, 0.08)'
           }}
         >
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
             {project.technologies.map((tech) => (
               <span key={tech.name} className="tag-tech">
-                <Cpu size={12} />
+                <Cpu size={11} color="#00F0FF" />
                 <strong>{tech.name}</strong> ({tech.category})
               </span>
             ))}
           </div>
 
-          <div style={{ display: 'flex', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', gap: '0.65rem' }}>
             <a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
-              style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
+              style={{ padding: '0.55rem 1.15rem', fontSize: '0.82rem' }}
             >
-              <Github size={15} /> View Code
+              <Github size={14} /> Repository
             </a>
             <button
               onClick={onClose}
               className="btn-primary"
-              style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
+              style={{ padding: '0.55rem 1.15rem', fontSize: '0.82rem' }}
             >
               Done
             </button>

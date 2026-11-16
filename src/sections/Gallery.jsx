@@ -6,14 +6,14 @@ import { Maximize2, Camera, Sparkles } from 'lucide-react';
 export default function Gallery({ onOpenLightbox }) {
   const [filter, setFilter] = useState('All');
 
-  const categories = ['All', 'University', 'Projects', 'Events', 'Sports', 'Portrait'];
+  const categories = ['All', 'University', 'Projects', 'Events', 'Sports'];
 
   const filteredItems = filter === 'All'
-    ? galleryData
+    ? galleryData.filter(i => i.category !== 'Portrait') // exclude standalone portrait
     : galleryData.filter((item) => item.category === filter);
 
   return (
-    <section id="gallery" className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section id="gallery" className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
         <SectionHeading
           badge="08 // GALLERY"
@@ -41,11 +41,11 @@ export default function Gallery({ onOpenLightbox }) {
                 style={{
                   padding: '0.45rem 1.15rem',
                   borderRadius: 'var(--radius-pill)',
-                  fontSize: '0.84rem',
+                  fontSize: '0.82rem',
                   fontWeight: isSelected ? 700 : 500,
-                  backgroundColor: isSelected ? 'var(--text-primary)' : '#FFFFFF',
-                  color: isSelected ? '#FFFFFF' : 'var(--text-secondary)',
-                  border: isSelected ? '1px solid var(--text-primary)' : '1px solid var(--border-color)',
+                  backgroundColor: isSelected ? '#D4FF00' : 'rgba(255, 255, 255, 0.04)',
+                  color: isSelected ? '#08090C' : '#8E94A0',
+                  border: isSelected ? '1px solid #D4FF00' : '1px solid rgba(255, 255, 255, 0.08)',
                   cursor: 'pointer',
                   transition: 'all var(--transition-fast)'
                 }}
@@ -56,22 +56,22 @@ export default function Gallery({ onOpenLightbox }) {
           })}
         </div>
 
-        {/* Asymmetric Editorial Masonry Grid */}
+        {/* Masonry Grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '2rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '1.75rem',
             alignItems: 'stretch'
           }}
         >
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              onClick={() => onOpenLightbox(item, galleryData)}
+              onClick={() => onOpenLightbox(item, filteredItems)}
               className="spotlight-card"
               style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'var(--bg-card)',
                 borderRadius: 'var(--radius-xl)',
                 overflow: 'hidden',
                 cursor: 'pointer',
@@ -84,7 +84,7 @@ export default function Gallery({ onOpenLightbox }) {
                 style={{
                   position: 'relative',
                   aspectRatio: item.aspect === 'tall' ? '4 / 5' : item.aspect === 'square' ? '1 / 1' : '16 / 10',
-                  backgroundColor: '#111111',
+                  backgroundColor: '#090B0E',
                   overflow: 'hidden'
                 }}
               >
@@ -95,9 +95,9 @@ export default function Gallery({ onOpenLightbox }) {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                    transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.04)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
                   onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
                 />
 
@@ -105,37 +105,38 @@ export default function Gallery({ onOpenLightbox }) {
                 <div
                   style={{
                     position: 'absolute',
-                    top: '16px',
-                    right: '16px',
-                    width: '36px',
-                    height: '36px',
+                    top: '14px',
+                    right: '14px',
+                    width: '32px',
+                    height: '32px',
                     borderRadius: '50%',
-                    backgroundColor: 'rgba(17, 17, 17, 0.75)',
+                    backgroundColor: 'rgba(9, 11, 14, 0.8)',
                     backdropFilter: 'blur(8px)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#FFFFFF'
+                    color: '#D4FF00',
+                    border: '1px solid rgba(212, 255, 0, 0.3)'
                   }}
                 >
-                  <Maximize2 size={16} />
+                  <Maximize2 size={14} />
                 </div>
               </div>
 
               {/* Caption & Metadata */}
-              <div style={{ padding: '1.25rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+              <div style={{ padding: '1.25rem 1.4rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span className="tag-tech" style={{ fontSize: '0.7rem' }}>
+                  <span className="tag-tech" style={{ fontSize: '0.68rem', backgroundColor: 'rgba(212, 255, 0, 0.1)', borderColor: 'rgba(212, 255, 0, 0.25)', color: '#D4FF00' }}>
                     {item.category}
                   </span>
-                  <span className="label-mono" style={{ fontSize: '0.7rem' }}>
+                  <span className="label-mono" style={{ fontSize: '0.68rem', color: '#888' }}>
                     {item.year}
                   </span>
                 </div>
-                <h4 className="heading-card" style={{ fontSize: '1.15rem', color: 'var(--text-primary)' }}>
+                <h4 className="heading-card" style={{ fontSize: '1.1rem', color: '#F4F5F8' }}>
                   {item.title}
                 </h4>
-                <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '0.84rem', color: '#8E94A0', lineHeight: 1.5 }}>
                   {item.caption}
                 </p>
               </div>

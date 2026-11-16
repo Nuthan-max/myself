@@ -38,15 +38,15 @@ export default function Certificates({ onSelectCertificate }) {
                 type="button"
                 onClick={() => setActiveCategory(cat)}
                 style={{
-                  padding: '0.55rem 1.25rem',
+                  padding: '0.5rem 1.15rem',
                   borderRadius: 'var(--radius-pill)',
                   fontFamily: 'var(--font-interface)',
-                  fontSize: '0.86rem',
+                  fontSize: '0.84rem',
                   fontWeight: isSelected ? 700 : 500,
-                  backgroundColor: isSelected ? 'var(--text-primary)' : '#FFFFFF',
-                  color: isSelected ? '#FFFFFF' : 'var(--text-secondary)',
-                  border: isSelected ? '1px solid var(--text-primary)' : '1px solid var(--border-color)',
-                  boxShadow: isSelected ? '0 4px 14px rgba(23, 23, 23, 0.15)' : 'none',
+                  backgroundColor: isSelected ? '#D4FF00' : 'rgba(255, 255, 255, 0.04)',
+                  color: isSelected ? '#08090C' : '#8E94A0',
+                  border: isSelected ? '1px solid #D4FF00' : '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: isSelected ? '0 0 14px rgba(212, 255, 0, 0.25)' : 'none',
                   cursor: 'pointer',
                   transition: 'all var(--transition-fast)'
                 }}
@@ -62,7 +62,7 @@ export default function Certificates({ onSelectCertificate }) {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-            gap: '1.75rem'
+            gap: '1.5rem'
           }}
         >
           {filteredCertificates.map((cert) => (
@@ -71,7 +71,7 @@ export default function Certificates({ onSelectCertificate }) {
               className="spotlight-card"
               onClick={() => onSelectCertificate(cert.id)}
               style={{
-                backgroundColor: '#FFFFFF',
+                backgroundColor: 'var(--bg-card)',
                 borderRadius: 'var(--radius-lg)',
                 border: '1px solid var(--border-color)',
                 overflow: 'hidden',
@@ -84,24 +84,24 @@ export default function Certificates({ onSelectCertificate }) {
               <div
                 style={{
                   position: 'relative',
-                  backgroundColor: '#F7F6F2',
+                  backgroundColor: '#090B0E',
                   padding: '1.25rem',
-                  borderBottom: '1px solid var(--border-color)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  minHeight: '210px'
+                  minHeight: '200px'
                 }}
               >
                 <img
                   src={cert.image}
                   alt={cert.title}
                   style={{
-                    maxHeight: '180px',
+                    maxHeight: '170px',
                     width: 'auto',
                     borderRadius: '4px',
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-                    transition: 'transform 0.4s ease'
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.5)',
+                    transition: 'transform 0.35s ease'
                   }}
                   className="cert-img-hover"
                 />
@@ -112,31 +112,32 @@ export default function Certificates({ onSelectCertificate }) {
                     position: 'absolute',
                     top: '12px',
                     right: '12px',
-                    padding: '0.3rem 0.65rem',
-                    backgroundColor: 'rgba(23, 23, 23, 0.85)',
-                    color: 'var(--accent-lime)',
+                    padding: '0.25rem 0.6rem',
+                    backgroundColor: 'rgba(9, 11, 14, 0.9)',
+                    color: '#D4FF00',
+                    border: '1px solid rgba(212, 255, 0, 0.3)',
                     borderRadius: 'var(--radius-pill)',
-                    fontSize: '0.7rem',
+                    fontSize: '0.68rem',
                     fontFamily: 'var(--font-mono)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.3rem'
                   }}
                 >
-                  <Eye size={12} />
+                  <Eye size={11} />
                   PREVIEW
                 </div>
               </div>
 
               {/* Certificate Info */}
-              <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ padding: '1.35rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                    <span className="tag-tech" style={{ fontSize: '0.68rem', backgroundColor: 'rgba(215, 241, 113, 0.25)', borderColor: '#D7F171' }}>
-                      <ShieldCheck size={12} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.45rem' }}>
+                    <span className="tag-tech" style={{ fontSize: '0.66rem', backgroundColor: 'rgba(212, 255, 0, 0.1)', borderColor: 'rgba(212, 255, 0, 0.25)', color: '#D4FF00' }}>
+                      <ShieldCheck size={11} />
                       {cert.verificationStatus}
                     </span>
-                    <span className="label-mono" style={{ fontSize: '0.68rem' }}>
+                    <span className="label-mono" style={{ fontSize: '0.66rem', color: '#888' }}>
                       {cert.year}
                     </span>
                   </div>
@@ -144,33 +145,33 @@ export default function Certificates({ onSelectCertificate }) {
                   <h3
                     className="heading-card"
                     style={{
-                      fontSize: '1.12rem',
+                      fontSize: '1.08rem',
                       lineHeight: 1.35,
-                      color: 'var(--text-primary)',
-                      marginBottom: '0.4rem'
+                      color: '#F4F5F8',
+                      marginBottom: '0.35rem'
                     }}
                   >
                     {cert.title}
                   </h3>
 
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>
+                  <p style={{ fontSize: '0.82rem', color: '#8E94A0', marginBottom: '0.65rem' }}>
                     {cert.issuer}
                   </p>
                 </div>
 
                 <div
                   style={{
-                    paddingTop: '0.85rem',
-                    borderTop: '1px solid var(--border-color)',
+                    paddingTop: '0.75rem',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center'
                   }}
                 >
-                  <span className="label-mono" style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
+                  <span className="label-mono" style={{ fontSize: '0.65rem', color: '#565C68' }}>
                     ID: {cert.credentialId.slice(0, 14)}...
                   </span>
-                  <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#25825d' }}>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#D4FF00' }}>
                     {cert.grade}
                   </span>
                 </div>

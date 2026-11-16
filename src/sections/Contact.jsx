@@ -22,10 +22,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
+    <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--bg-primary)', position: 'relative' }}>
       <div className="container">
         <SectionHeading
-          badge="09 // CONTACT"
+          badge="09 // CONTACT &amp; DISPATCH"
           title="Let's connect &amp;"
           highlightWord="Collaborate."
           subtitle="Open to technical collaboration, hackathon invitations, and academic research discussions."
@@ -35,38 +35,40 @@ export default function Contact() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: 'clamp(2rem, 5vw, 4rem)',
+            gap: 'clamp(2rem, 4vw, 3.5rem)',
             alignItems: 'flex-start'
           }}
         >
-          {/* Left Column: Big Editorial Typography & Direct Email Box */}
+          {/* Left Column: Direct Correspondence */}
           <div style={{ gridColumn: 'span 12' }} className="hero-left-col">
             <h3
               className="display-title"
               style={{
-                color: 'var(--text-primary)',
-                marginBottom: '1.25rem'
+                color: '#F4F5F8',
+                marginBottom: '1rem',
+                fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)'
               }}
             >
-              Have an idea or engineering challenge in mind?
+              Have an engineering challenge or project in mind?
             </h3>
 
             <p
               className="body-lead"
               style={{
-                fontSize: '1.15rem',
-                color: 'var(--text-secondary)',
-                marginBottom: '2rem'
+                fontSize: '1.05rem',
+                color: '#8E94A0',
+                marginBottom: '1.75rem',
+                lineHeight: 1.65
               }}
             >
-              Feel free to reach out directly via email or connect through LinkedIn. I respond promptly to project inquiries, research discussions, and hackathon invites.
+              Feel free to reach out directly via email or connect through LinkedIn. I respond promptly to project inquiries, research discussions, and hackathon team invites.
             </p>
 
             {/* Email Copy Card */}
             <div
               style={{
-                padding: '1.5rem',
-                backgroundColor: 'var(--bg-primary)',
+                padding: '1.25rem 1.5rem',
+                backgroundColor: 'var(--bg-card)',
                 borderRadius: 'var(--radius-lg)',
                 border: '1px solid var(--border-color)',
                 display: 'flex',
@@ -74,16 +76,16 @@ export default function Contact() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 gap: '1rem',
-                marginBottom: '2rem'
+                marginBottom: '1.75rem'
               }}
             >
               <div>
-                <span className="label-mono" style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>
+                <span className="label-mono" style={{ fontSize: '0.68rem', color: '#8E94A0' }}>
                   DIRECT INBOX
                 </span>
                 <div
                   className="font-interface"
-                  style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)', marginTop: '0.2rem' }}
+                  style={{ fontSize: '1.1rem', fontWeight: 700, color: '#D4FF00', marginTop: '0.2rem' }}
                 >
                   {personalData.socials.email}
                 </div>
@@ -93,25 +95,25 @@ export default function Contact() {
                 type="button"
                 onClick={handleCopyEmail}
                 className="btn-secondary"
-                style={{ padding: '0.65rem 1.25rem', fontSize: '0.84rem' }}
+                style={{ padding: '0.55rem 1.15rem', fontSize: '0.82rem' }}
               >
-                {copied ? <Check size={16} color="#25825d" /> : <Copy size={16} />}
-                {copied ? 'Copied to Clipboard' : 'Copy Address'}
+                {copied ? <Check size={14} color="#D4FF00" /> : <Copy size={14} />}
+                {copied ? 'Copied' : 'Copy Address'}
               </button>
             </div>
 
             {/* Social Channels */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.85rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
               <a
                 href={personalData.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tag-tech"
-                style={{ padding: '0.75rem 1.35rem', fontSize: '0.9rem' }}
+                style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
               >
-                <Github size={18} />
+                <Github size={16} />
                 GitHub Profile
-                <ArrowUpRight size={14} />
+                <ArrowUpRight size={13} />
               </a>
 
               <a
@@ -119,63 +121,63 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tag-tech"
-                style={{ padding: '0.75rem 1.35rem', fontSize: '0.9rem' }}
+                style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
               >
-                <Linkedin size={18} />
+                <Linkedin size={16} />
                 LinkedIn Network
-                <ArrowUpRight size={14} />
+                <ArrowUpRight size={13} />
               </a>
             </div>
           </div>
 
-          {/* Right Column: Interactive Dispatch Form */}
+          {/* Right Column: Dispatch Form */}
           <div style={{ gridColumn: 'span 12' }} className="hero-right-col">
             <div
               className="spotlight-card"
               style={{
-                padding: 'clamp(1.75rem, 3.5vw, 2.5rem)',
-                backgroundColor: '#FFFFFF',
+                padding: 'clamp(1.5rem, 3vw, 2.25rem)',
+                backgroundColor: 'var(--bg-card)',
                 borderRadius: 'var(--radius-xl)',
                 border: '1px solid var(--border-color)'
               }}
             >
-              <h4 className="heading-card" style={{ fontSize: '1.35rem', marginBottom: '0.5rem' }}>
-                Send a Direct Message
+              <h4 className="heading-card" style={{ fontSize: '1.25rem', marginBottom: '0.4rem', color: '#F4F5F8' }}>
+                Dispatch a Message
               </h4>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                Dispatch a message directly to my academic and project correspondence.
+              <p style={{ fontSize: '0.85rem', color: '#8E94A0', marginBottom: '1.25rem' }}>
+                Send a direct note regarding project collaboration, technical review, or research.
               </p>
 
               {formSubmitted ? (
                 <div
                   style={{
-                    padding: '2.5rem 1.5rem',
+                    padding: '2rem 1.25rem',
                     textAlign: 'center',
-                    backgroundColor: 'rgba(215, 241, 113, 0.15)',
+                    backgroundColor: 'rgba(212, 255, 0, 0.08)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--accent-lime)'
+                    border: '1px solid rgba(212, 255, 0, 0.3)'
                   }}
                 >
                   <div
                     style={{
-                      width: '48px',
-                      height: '48px',
+                      width: '42px',
+                      height: '42px',
                       borderRadius: '50%',
-                      backgroundColor: 'var(--text-primary)',
-                      color: 'var(--accent-lime)',
+                      backgroundColor: '#D4FF00',
+                      color: '#08090C',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      margin: '0 auto 1rem'
+                      margin: '0 auto 0.85rem'
                     }}
                   >
-                    <Check size={24} />
+                    <Check size={22} />
                   </div>
-                  <h5 className="heading-card" style={{ fontSize: '1.2rem', marginBottom: '0.4rem' }}>
+                  <h5 className="heading-card" style={{ fontSize: '1.1rem', marginBottom: '0.35rem', color: '#F4F5F8' }}>
                     Message Dispatched Successfully
                   </h5>
-                  <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
-                    Thank you, {formData.name}. I have received your message and will get back to you shortly.
+                  <p style={{ fontSize: '0.85rem', color: '#8E94A0' }}>
+                    Thank you, {formData.name}. Your note has been queued and I will respond shortly.
                   </p>
                   <button
                     onClick={() => {
@@ -183,81 +185,81 @@ export default function Contact() {
                       setFormData({ name: '', email: '', message: '' });
                     }}
                     className="btn-secondary"
-                    style={{ marginTop: '1.25rem', padding: '0.5rem 1.25rem', fontSize: '0.82rem' }}
+                    style={{ marginTop: '1rem', padding: '0.45rem 1.15rem', fontSize: '0.8rem' }}
                   >
                     Send Another Note
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div>
-                    <label className="label-mono" style={{ display: 'block', marginBottom: '0.4rem', fontSize: '0.72rem' }}>
+                    <label className="label-mono" style={{ display: 'block', marginBottom: '0.35rem', fontSize: '0.68rem', color: '#8E94A0' }}>
                       YOUR NAME
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Dr. Jane Doe / Recruiter Name"
+                      placeholder="e.g. Dr. Alex Vance / Hackathon Organizer"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       style={{
                         width: '100%',
-                        padding: '0.85rem 1rem',
+                        padding: '0.75rem 0.95rem',
                         borderRadius: 'var(--radius-md)',
-                        border: '1px solid var(--border-color)',
-                        backgroundColor: 'var(--bg-primary)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        backgroundColor: '#090B0E',
                         fontFamily: 'inherit',
-                        fontSize: '0.92rem',
+                        fontSize: '0.88rem',
                         outline: 'none',
-                        color: 'var(--text-primary)'
+                        color: '#F4F5F8'
                       }}
                     />
                   </div>
 
                   <div>
-                    <label className="label-mono" style={{ display: 'block', marginBottom: '0.4rem', fontSize: '0.72rem' }}>
+                    <label className="label-mono" style={{ display: 'block', marginBottom: '0.35rem', fontSize: '0.68rem', color: '#8E94A0' }}>
                       EMAIL ADDRESS
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="jane.doe@university.edu"
+                      placeholder="alex@university.edu"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       style={{
                         width: '100%',
-                        padding: '0.85rem 1rem',
+                        padding: '0.75rem 0.95rem',
                         borderRadius: 'var(--radius-md)',
-                        border: '1px solid var(--border-color)',
-                        backgroundColor: 'var(--bg-primary)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        backgroundColor: '#090B0E',
                         fontFamily: 'inherit',
-                        fontSize: '0.92rem',
+                        fontSize: '0.88rem',
                         outline: 'none',
-                        color: 'var(--text-primary)'
+                        color: '#F4F5F8'
                       }}
                     />
                   </div>
 
                   <div>
-                    <label className="label-mono" style={{ display: 'block', marginBottom: '0.4rem', fontSize: '0.72rem' }}>
+                    <label className="label-mono" style={{ display: 'block', marginBottom: '0.35rem', fontSize: '0.68rem', color: '#8E94A0' }}>
                       MESSAGE OR INQUIRY
                     </label>
                     <textarea
                       required
                       rows={4}
-                      placeholder="Regarding project collaboration, technical review, or research inquiries..."
+                      placeholder="Regarding project collaboration, embedded systems review, or hackathon..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       style={{
                         width: '100%',
-                        padding: '0.85rem 1rem',
+                        padding: '0.75rem 0.95rem',
                         borderRadius: 'var(--radius-md)',
-                        border: '1px solid var(--border-color)',
-                        backgroundColor: 'var(--bg-primary)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        backgroundColor: '#090B0E',
                         fontFamily: 'inherit',
-                        fontSize: '0.92rem',
+                        fontSize: '0.88rem',
                         outline: 'none',
-                        color: 'var(--text-primary)',
+                        color: '#F4F5F8',
                         resize: 'vertical'
                       }}
                     />
@@ -268,11 +270,11 @@ export default function Contact() {
                     className="btn-primary"
                     style={{
                       width: '100%',
-                      padding: '1rem',
-                      fontSize: '0.94rem'
+                      padding: '0.85rem',
+                      fontSize: '0.9rem'
                     }}
                   >
-                    <Send size={16} />
+                    <Send size={15} />
                     Dispatch Message
                   </MagneticButton>
                 </form>

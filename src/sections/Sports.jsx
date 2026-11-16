@@ -16,12 +16,12 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
           subtitle="Physical endurance, team leadership on the pitch, and fast tactical decision-making — grounding algorithmic rigor in real-world athleticism."
         />
 
-        {/* Masonry / Grid of Large Photographic Cards */}
+        {/* Masonry / Grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '1.75rem'
           }}
         >
           {sportsData.map((sport) => {
@@ -33,10 +33,10 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
                 onMouseEnter={() => setHoveredCard(sport.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{
-                  backgroundColor: '#FFFFFF',
+                  backgroundColor: 'var(--bg-card)',
                   borderRadius: 'var(--radius-xl)',
                   overflow: 'hidden',
-                  border: isHovered ? '1px solid rgba(23, 23, 23, 0.3)' : '1px solid var(--border-color)',
+                  border: isHovered ? '1px solid rgba(212, 255, 0, 0.35)' : '1px solid var(--border-color)',
                   boxShadow: isHovered ? 'var(--shadow-card-hover)' : 'var(--shadow-subtle)',
                   transition: 'all var(--transition-normal)',
                   display: 'flex',
@@ -48,7 +48,7 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
                   style={{
                     position: 'relative',
                     aspectRatio: '16 / 10',
-                    backgroundColor: '#111111',
+                    backgroundColor: '#090B0E',
                     overflow: 'hidden',
                     cursor: 'pointer'
                   }}
@@ -72,8 +72,8 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      transform: isHovered ? 'scale(1.04)' : 'scale(1)',
-                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                      transform: isHovered ? 'scale(1.03)' : 'scale(1)',
+                      transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
                     }}
                   />
                   
@@ -81,16 +81,16 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
                   <div
                     style={{
                       position: 'absolute',
-                      top: '14px',
-                      left: '14px',
-                      padding: '0.35rem 0.85rem',
-                      backgroundColor: 'rgba(17, 17, 17, 0.85)',
+                      top: '12px',
+                      left: '12px',
+                      padding: '0.3rem 0.75rem',
+                      backgroundColor: 'rgba(9, 11, 14, 0.88)',
                       backdropFilter: 'blur(8px)',
                       borderRadius: 'var(--radius-pill)',
-                      color: 'var(--accent-lime)',
-                      fontSize: '0.72rem',
+                      color: '#D4FF00',
+                      fontSize: '0.7rem',
                       fontFamily: 'var(--font-mono)',
-                      border: '1px solid rgba(255, 255, 255, 0.15)'
+                      border: '1px solid rgba(212, 255, 0, 0.3)'
                     }}
                   >
                     {sport.badge}
@@ -98,25 +98,25 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
                 </div>
 
                 {/* Content Details */}
-                <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
+                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                   <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
-                      <h3 className="heading-card" style={{ fontSize: '1.45rem', color: 'var(--text-primary)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem' }}>
+                      <h3 className="heading-card" style={{ fontSize: '1.3rem', color: '#F4F5F8' }}>
                         {sport.activity}
                       </h3>
-                      <span className="label-mono" style={{ fontSize: '0.72rem' }}>
+                      <span className="label-mono" style={{ fontSize: '0.7rem', color: '#888' }}>
                         {sport.year}
                       </span>
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                      <Trophy size={14} color="#25825d" />
-                      <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#25825d' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.85rem' }}>
+                      <Trophy size={13} color="#D4FF00" />
+                      <span style={{ fontSize: '0.85rem', fontWeight: 650, color: '#D4FF00' }}>
                         {sport.achievement}
                       </span>
                     </div>
 
-                    <p className="body-regular" style={{ fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
+                    <p className="body-regular" style={{ fontSize: '0.88rem', lineHeight: 1.6, color: '#8E94A0', marginBottom: '1.15rem' }}>
                       {sport.description}
                     </p>
                   </div>
@@ -124,15 +124,15 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
                   {/* Key Takeaway Pill & Trigger */}
                   <div
                     style={{
-                      paddingTop: '1rem',
-                      borderTop: '1px solid var(--border-color)',
+                      paddingTop: '0.85rem',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center'
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
-                      <Zap size={13} color="var(--accent-lavender)" />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.76rem', color: '#8E94A0' }}>
+                      <Zap size={12} color="#00F0FF" />
                       <span>{sport.keyTakeaway}</span>
                     </div>
 
@@ -154,10 +154,10 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
                         }
                       }}
                       className="btn-secondary"
-                      style={{ padding: '0.45rem 0.85rem', fontSize: '0.78rem' }}
+                      style={{ padding: '0.4rem 0.8rem', fontSize: '0.76rem' }}
                     >
                       Certificate / View
-                      <ArrowUpRight size={13} />
+                      <ArrowUpRight size={12} />
                     </button>
                   </div>
                 </div>

@@ -20,7 +20,7 @@ export default function Skills() {
     <section id="skills" className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
         <SectionHeading
-          badge="03 // SKILLS"
+          badge="03 // CAPABILITIES"
           title="Technical Competencies &amp;"
           highlightWord="Applied Stack."
           subtitle="Practical hardware, circuit design, and software engineering capabilities developed through laboratory coursework and real builds."
@@ -51,28 +51,28 @@ export default function Skills() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.6rem',
-                  padding: '0.75rem 1.4rem',
+                  padding: '0.65rem 1.25rem',
                   borderRadius: 'var(--radius-pill)',
                   fontFamily: 'var(--font-interface)',
-                  fontSize: '0.92rem',
+                  fontSize: '0.88rem',
                   fontWeight: isSelected ? 700 : 500,
-                  backgroundColor: isSelected ? 'var(--text-primary)' : '#FFFFFF',
-                  color: isSelected ? 'var(--bg-primary)' : 'var(--text-secondary)',
-                  border: isSelected ? '1px solid var(--text-primary)' : '1px solid var(--border-color)',
-                  boxShadow: isSelected ? '0 4px 16px rgba(23, 23, 23, 0.15)' : 'none',
+                  backgroundColor: isSelected ? '#D4FF00' : 'rgba(255, 255, 255, 0.04)',
+                  color: isSelected ? '#08090C' : '#8E94A0',
+                  border: isSelected ? '1px solid #D4FF00' : '1px solid rgba(255, 255, 255, 0.08)',
+                  boxShadow: isSelected ? '0 0 16px rgba(212, 255, 0, 0.25)' : 'none',
                   transition: 'all var(--transition-fast)',
                   cursor: 'pointer'
                 }}
               >
-                <Icon size={16} color={isSelected ? 'var(--accent-lime)' : 'inherit'} />
+                <Icon size={15} color={isSelected ? '#08090C' : 'inherit'} />
                 {cat.label}
                 <span
                   style={{
-                    fontSize: '0.72rem',
-                    padding: '0.15rem 0.5rem',
+                    fontSize: '0.7rem',
+                    padding: '0.15rem 0.45rem',
                     borderRadius: 'var(--radius-pill)',
-                    backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.2)' : 'rgba(23, 23, 23, 0.05)',
-                    color: isSelected ? '#FFFFFF' : 'var(--text-muted)'
+                    backgroundColor: isSelected ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.08)',
+                    color: isSelected ? '#08090C' : '#8E94A0'
                   }}
                 >
                   {cat.count}
@@ -82,33 +82,35 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Category Tagline Banner */}
+        {/* Category Scope Banner */}
         <div
           style={{
-            padding: '1rem 1.5rem',
-            backgroundColor: 'var(--bg-primary)',
+            padding: '0.85rem 1.25rem',
+            backgroundColor: 'var(--bg-card)',
             borderRadius: 'var(--radius-md)',
             border: '1px solid var(--border-color)',
-            marginBottom: '2rem',
+            marginBottom: '1.75rem',
             display: 'flex',
+            flexWrap: 'wrap',
             justifyContent: 'space-between',
-            alignItems: 'center'
+            alignItems: 'center',
+            gap: '0.5rem'
           }}
         >
-          <span className="label-mono" style={{ color: 'var(--text-primary)' }}>
-            CATEGORY SCOPE // {currentCategoryData.category.toUpperCase()}
+          <span className="label-mono" style={{ color: '#D4FF00' }}>
+            SCOPE // {currentCategoryData.category.toUpperCase()}
           </span>
-          <span className="label-mono" style={{ color: 'var(--text-secondary)' }}>
+          <span className="label-mono" style={{ color: '#8E94A0' }}>
             {currentCategoryData.tagline}
           </span>
         </div>
 
-        {/* Skills Cards Grid with Hover Expansion & Tilt */}
+        {/* Skills Cards Grid */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem'
+            gap: '1.25rem'
           }}
         >
           {currentCategoryData.skills.map((skill) => {
@@ -120,11 +122,11 @@ export default function Skills() {
                 onMouseEnter={() => setActiveSkill(skill.name)}
                 onMouseLeave={() => setActiveSkill(null)}
                 style={{
-                  padding: '1.75rem',
-                  backgroundColor: '#FFFFFF',
+                  padding: '1.5rem',
+                  backgroundColor: 'var(--bg-card)',
                   borderRadius: 'var(--radius-lg)',
-                  border: isHovered ? '1px solid var(--text-primary)' : '1px solid var(--border-color)',
-                  transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
+                  border: isHovered ? '1px solid #D4FF00' : '1px solid var(--border-color)',
+                  transform: isHovered ? 'translateY(-3px)' : 'translateY(0)',
                   transition: 'all var(--transition-normal)'
                 }}
               >
@@ -134,14 +136,14 @@ export default function Skills() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    marginBottom: '1rem'
+                    marginBottom: '0.85rem'
                   }}
                 >
                   <h3
                     className="heading-card"
                     style={{
-                      fontSize: '1.35rem',
-                      color: 'var(--text-primary)',
+                      fontSize: '1.2rem',
+                      color: '#F4F5F8',
                       margin: 0
                     }}
                   >
@@ -150,12 +152,13 @@ export default function Skills() {
                   <span
                     className="label-mono"
                     style={{
-                      padding: '0.25rem 0.65rem',
+                      padding: '0.2rem 0.55rem',
                       borderRadius: 'var(--radius-pill)',
-                      backgroundColor: 'rgba(215, 241, 113, 0.25)',
-                      color: '#171717',
-                      fontWeight: 600,
-                      fontSize: '0.7rem'
+                      backgroundColor: 'rgba(212, 255, 0, 0.12)',
+                      color: '#D4FF00',
+                      border: '1px solid rgba(212, 255, 0, 0.25)',
+                      fontWeight: 650,
+                      fontSize: '0.68rem'
                     }}
                   >
                     {skill.level}
@@ -166,44 +169,44 @@ export default function Skills() {
                 <p
                   className="body-regular"
                   style={{
-                    fontSize: '0.92rem',
+                    fontSize: '0.9rem',
                     lineHeight: 1.6,
-                    color: 'var(--text-secondary)',
-                    marginBottom: '1.25rem'
+                    color: '#8E94A0',
+                    marginBottom: '1.2rem'
                   }}
                 >
                   {skill.scope}
                 </p>
 
-                {/* Demonstrated Real-world Use Cases */}
+                {/* Implementations */}
                 <div>
                   <div
                     className="label-mono"
                     style={{
-                      fontSize: '0.68rem',
-                      color: 'var(--text-muted)',
-                      marginBottom: '0.5rem',
+                      fontSize: '0.65rem',
+                      color: '#565C68',
+                      marginBottom: '0.45rem',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.4rem'
+                      gap: '0.35rem'
                     }}
                   >
-                    <Check size={12} color="#25825d" />
-                    PRACTICAL IMPLEMENTATIONS
+                    <Check size={11} color="#D4FF00" />
+                    APPLIED IMPLEMENTATIONS
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                     {skill.useCases.map((uc) => (
                       <div
                         key={uc}
                         style={{
-                          fontSize: '0.84rem',
-                          color: 'var(--text-primary)',
+                          fontSize: '0.82rem',
+                          color: '#C5C9D3',
                           display: 'flex',
                           alignItems: 'center',
-                          gap: '0.5rem'
+                          gap: '0.45rem'
                         }}
                       >
-                        <span style={{ color: 'var(--accent-lavender)' }}>▸</span>
+                        <span style={{ color: '#00F0FF' }}>▸</span>
                         <span>{uc}</span>
                       </div>
                     ))}

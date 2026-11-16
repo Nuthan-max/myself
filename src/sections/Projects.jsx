@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { projectsData } from '../data/projects';
-import { ArrowUpRight, Github, ExternalLink, Cpu, Sparkles, Layers } from 'lucide-react';
-import MagneticButton from '../components/MagneticButton';
+import { ArrowUpRight, Github, ExternalLink, Cpu, Sparkles, Terminal } from 'lucide-react';
 
 export default function Projects({ onSelectProject }) {
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
@@ -11,14 +10,14 @@ export default function Projects({ onSelectProject }) {
     <section id="projects" className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container">
         <SectionHeading
-          badge="04 // PROJECTS"
-          title="Featured Systems &amp;"
-          highlightWord="Engineering Work."
+          badge="04 // HARDWARE &amp; SOFTWARE SYSTEMS"
+          title="Featured Projects &amp;"
+          highlightWord="Engineering Systems."
           subtitle="Applied cyber-physical hardware, graph-search pathfinding simulations, and computer vision models developed for hackathons and academic study."
         />
 
-        {/* Big Photographic Project Cards Stack */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(3rem, 6vw, 5rem)' }}>
+        {/* Project Cards Stack */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2.5rem, 5vw, 4rem)' }}>
           {projectsData.map((project, index) => {
             const isHovered = hoveredProjectId === project.id;
             const isEven = index % 2 === 0;
@@ -30,11 +29,11 @@ export default function Projects({ onSelectProject }) {
                 onMouseEnter={() => setHoveredProjectId(project.id)}
                 onMouseLeave={() => setHoveredProjectId(null)}
                 style={{
-                  backgroundColor: '#FFFFFF',
+                  backgroundColor: 'var(--bg-card)',
                   borderRadius: 'var(--radius-xl)',
-                  border: isHovered ? '1px solid rgba(23, 23, 23, 0.3)' : '1px solid var(--border-color)',
+                  border: isHovered ? '1px solid rgba(212, 255, 0, 0.4)' : '1px solid var(--border-color)',
                   overflow: 'hidden',
-                  padding: 'clamp(1.5rem, 3.5vw, 3rem)',
+                  padding: 'clamp(1.5rem, 3.5vw, 2.75rem)',
                   boxShadow: isHovered ? 'var(--shadow-card-hover)' : 'var(--shadow-subtle)',
                   transition: 'all var(--transition-normal)'
                 }}
@@ -43,7 +42,7 @@ export default function Projects({ onSelectProject }) {
                   style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(12, 1fr)',
-                    gap: 'clamp(1.5rem, 4vw, 3rem)',
+                    gap: 'clamp(1.5rem, 3.5vw, 2.5rem)',
                     alignItems: 'center'
                   }}
                 >
@@ -62,8 +61,8 @@ export default function Projects({ onSelectProject }) {
                         borderRadius: 'var(--radius-lg)',
                         overflow: 'hidden',
                         cursor: 'pointer',
-                        backgroundColor: '#111111',
-                        border: '1px solid var(--border-color)',
+                        backgroundColor: '#090B0E',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         aspectRatio: '16 / 10'
                       }}
                     >
@@ -74,43 +73,43 @@ export default function Projects({ onSelectProject }) {
                           width: '100%',
                           height: '100%',
                           objectFit: 'cover',
-                          transform: isHovered ? 'scale(1.03)' : 'scale(1)',
-                          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                          transform: isHovered ? 'scale(1.02)' : 'scale(1)',
+                          transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
                         }}
                       />
 
-                      {/* Click overlay pill */}
+                      {/* Pill */}
                       <div
                         style={{
                           position: 'absolute',
-                          bottom: '16px',
-                          right: '16px',
-                          padding: '0.45rem 1rem',
-                          backgroundColor: 'rgba(17, 17, 17, 0.85)',
+                          bottom: '14px',
+                          right: '14px',
+                          padding: '0.4rem 0.85rem',
+                          backgroundColor: 'rgba(9, 11, 14, 0.9)',
                           backdropFilter: 'blur(8px)',
                           borderRadius: 'var(--radius-pill)',
                           color: '#FFFFFF',
-                          fontSize: '0.78rem',
+                          fontSize: '0.74rem',
                           fontFamily: 'var(--font-mono)',
                           display: 'flex',
                           alignItems: 'center',
                           gap: '0.4rem',
-                          border: '1px solid rgba(255, 255, 255, 0.15)'
+                          border: '1px solid rgba(212, 255, 0, 0.3)'
                         }}
                       >
-                        VIEW DEEP DIVE <ArrowUpRight size={13} color="var(--accent-lime)" />
+                        TECHNICAL STUDY <ArrowUpRight size={12} color="#D4FF00" />
                       </div>
                     </div>
                   </div>
 
-                  {/* Narrative Info Column */}
+                  {/* Info Column */}
                   <div
                     style={{
                       gridColumn: 'span 12',
                       order: isEven ? 2 : 1,
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '1.25rem'
+                      gap: '1.15rem'
                     }}
                     className="hero-right-col"
                   >
@@ -119,14 +118,14 @@ export default function Projects({ onSelectProject }) {
                       <span
                         className="font-mono"
                         style={{
-                          fontSize: '1.75rem',
+                          fontSize: '1.4rem',
                           fontWeight: 800,
-                          color: 'var(--accent-lavender)'
+                          color: '#D4FF00'
                         }}
                       >
                         /{project.number}
                       </span>
-                      <span className="tag-tech" style={{ backgroundColor: 'rgba(215, 241, 113, 0.25)', borderColor: '#D7F171' }}>
+                      <span className="tag-tech" style={{ backgroundColor: 'rgba(212, 255, 0, 0.1)', borderColor: 'rgba(212, 255, 0, 0.3)', color: '#D4FF00' }}>
                         {project.status}
                       </span>
                     </div>
@@ -134,9 +133,9 @@ export default function Projects({ onSelectProject }) {
                     <h3
                       className="heading-card"
                       style={{
-                        fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)',
-                        color: 'var(--text-primary)',
-                        lineHeight: 1.15
+                        fontSize: 'clamp(1.4rem, 2.2vw, 1.85rem)',
+                        color: '#F4F5F8',
+                        lineHeight: 1.2
                       }}
                     >
                       {project.title}
@@ -145,34 +144,34 @@ export default function Projects({ onSelectProject }) {
                     <p
                       className="body-regular"
                       style={{
-                        fontSize: '1rem',
-                        lineHeight: 1.7,
-                        color: 'var(--text-secondary)'
+                        fontSize: '0.94rem',
+                        lineHeight: 1.65,
+                        color: '#8E94A0'
                       }}
                     >
                       {project.shortDescription}
                     </p>
 
                     {/* Tech Badges */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                       {project.technologies.slice(0, 4).map((tech) => (
                         <span key={tech.name} className="tag-tech">
-                          <Cpu size={12} color="var(--accent-lavender)" />
+                          <Cpu size={11} color="#00F0FF" />
                           {tech.name}
                         </span>
                       ))}
                     </div>
 
                     {/* Action Buttons */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', paddingTop: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingTop: '0.4rem' }}>
                       <button
                         type="button"
                         onClick={() => onSelectProject(project)}
                         className="btn-primary"
-                        style={{ padding: '0.75rem 1.4rem', fontSize: '0.88rem' }}
+                        style={{ padding: '0.7rem 1.35rem', fontSize: '0.86rem' }}
                       >
                         Technical Case Study
-                        <ArrowUpRight size={15} />
+                        <ArrowUpRight size={14} />
                       </button>
 
                       <a
@@ -180,9 +179,9 @@ export default function Projects({ onSelectProject }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-secondary"
-                        style={{ padding: '0.75rem 1.25rem', fontSize: '0.88rem' }}
+                        style={{ padding: '0.7rem 1.2rem', fontSize: '0.86rem' }}
                       >
-                        <Github size={15} />
+                        <Github size={14} />
                         GitHub
                       </a>
                     </div>
