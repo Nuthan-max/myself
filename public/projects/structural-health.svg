@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1118"/>
+      <stop offset="100%" stop-color="#07080c"/>
+    </linearGradient>
+    <linearGradient id="sineGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8A1E3"/>
+      <stop offset="50%" stop-color="#D7F171"/>
+      <stop offset="100%" stop-color="#B8A1E3"/>
+    </linearGradient>
+    <pattern id="dotPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="rgba(255, 255, 255, 0.08)"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad2)"/>
+  <rect width="800" height="500" fill="url(#dotPattern)"/>
+
+  <!-- PCB Board Simulation / Layout -->
+  <rect x="60" y="70" width="400" height="360" rx="12" fill="#0d1b14" stroke="#1d432e" stroke-width="2"/>
+  <text x="80" y="105" fill="#509b72" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">SHM-NODE-REV3.2 // ECE DEPT</text>
+  
+  <!-- Copper traces -->
+  <g stroke="#26784e" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M 120 130 L 180 130 L 220 180 L 220 250"/>
+    <path d="M 140 150 L 190 150 L 230 200 L 230 250"/>
+    <path d="M 320 250 L 320 190 L 370 140 L 410 140"/>
+    <path d="M 330 270 L 390 270 L 420 310"/>
+    <path d="M 170 330 L 210 330 L 250 290"/>
+  </g>
+
+  <!-- ESP32 Chip -->
+  <rect x="200" y="210" width="140" height="110" rx="6" fill="#1b1d24" stroke="#D7F171" stroke-width="2"/>
+  <text x="270" y="260" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="14" text-anchor="middle">ESP-32 WROOM</text>
+  <text x="270" y="280" fill="#B8A1E3" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle">240MHz • Dual Core</text>
+
+  <!-- Pin headers -->
+  <g fill="#D7F171">
+    <circle cx="188" cy="225" r="3"/><circle cx="188" cy="245" r="3"/><circle cx="188" cy="265" r="3"/><circle cx="188" cy="285" r="3"/><circle cx="188" cy="305" r="3"/>
+    <circle cx="352" cy="225" r="3"/><circle cx="352" cy="245" r="3"/><circle cx="352" cy="265" r="3"/><circle cx="352" cy="285" r="3"/><circle cx="352" cy="305" r="3"/>
+  </g>
+
+  <!-- Sensor Breakout (MPU6050 Piezo) -->
+  <rect x="90" y="270" width="80" height="70" rx="4" fill="#132a1f" stroke="#33c177" stroke-width="1.5"/>
+  <text x="130" y="302" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">MPU-6050</text>
+  <text x="130" y="318" fill="#88bda3" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">I2C INTERRUPT</text>
+
+  <!-- Oscilloscope Waveform Display Right -->
+  <rect x="490" y="70" width="255" height="360" rx="12" fill="#11131a" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
+  <text x="515" y="105" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">FFT SPECTRAL HARMONICS</text>
+  
+  <!-- Waveform grid -->
+  <g stroke="rgba(255, 255, 255, 0.06)" stroke-width="1">
+    <line x1="515" y1="140" x2="720" y2="140"/>
+    <line x1="515" y1="180" x2="720" y2="180"/>
+    <line x1="515" y1="220" x2="720" y2="220"/>
+    <line x1="515" y1="260" x2="720" y2="260"/>
+    <line x1="515" y1="300" x2="720" y2="300"/>
+  </g>
+
+  <!-- Waveform paths -->
+  <path d="M 515 220 Q 535 150 555 220 T 595 220 T 635 160 T 675 270 T 720 220" fill="none" stroke="url(#sineGlow)" stroke-width="3"/>
+  <path d="M 515 220 Q 540 270 565 220 T 615 220 T 665 190 T 720 220" fill="none" stroke="rgba(184, 161, 227, 0.4)" stroke-width="1.5" stroke-dasharray="2 2"/>
+
+  <!-- Telemetry metrics -->
+  <rect x="515" y="330" width="205" height="80" rx="6" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.08)"/>
+  <text x="530" y="354" fill="#AAAAAA" font-family="'JetBrains Mono', monospace" font-size="10">Sampling Freq: 200 Hz</text>
+  <text x="530" y="374" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">Strain Drift: ±0.003 mm</text>
+  <text x="530" y="394" fill="#B8A1E3" font-family="'JetBrains Mono', monospace" font-size="10">Resonance Health: 99.2% OK</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="chessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161719"/>
+      <stop offset="100%" stop-color="#0b0b0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="16" fill="url(#chessGrad)"/>
+
+  <!-- Chess Board & Knight Silhouette -->
+  <g transform="translate(390, 80)">
+    <!-- 4x4 Mini Board Grid -->
+    <g stroke="rgba(255, 255, 255, 0.15)" stroke-width="1">
+      <rect x="0" y="40" width="40" height="40" fill="#222"/>
+      <rect x="40" y="40" width="40" height="40" fill="#333"/>
+      <rect x="80" y="40" width="40" height="40" fill="#222"/>
+      <rect x="120" y="40" width="40" height="40" fill="#333"/>
+
+      <rect x="0" y="80" width="40" height="40" fill="#333"/>
+      <rect x="40" y="80" width="40" height="40" fill="#222"/>
+      <rect x="80" y="80" width="40" height="40" fill="#333"/>
+      <rect x="120" y="80" width="40" height="40" fill="#222"/>
+
+      <rect x="0" y="120" width="40" height="40" fill="#222"/>
+      <rect x="40" y="120" width="40" height="40" fill="#333"/>
+      <rect x="80" y="120" width="40" height="40" fill="#222"/>
+      <rect x="120" y="120" width="40" height="40" fill="#333"/>
+    </g>
+
+    <!-- Knight Piece Outline -->
+    <path d="M 60 140 C 60 110, 30 100, 50 60 C 65 50, 80 55, 85 70 C 95 65, 105 75, 100 95 C 115 110, 110 140, 110 140 Z" fill="#D7F171" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="70" cy="72" r="3" fill="#111"/>
+  </g>
+
+  <!-- Content text -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="130" height="26" rx="13" fill="#D7F171"/>
+    <text x="65" y="17" fill="#111111" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">CHESS // RAPID</text>
+    <text x="0" y="65" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Calculated Depth &amp;</text>
+    <text x="0" y="100" fill="#B8A1E3" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Positional Strategy</text>
+    <text x="0" y="140" fill="#AAAAAA" font-family="'Inter', sans-serif" font-size="13">Top 8 District Rank • Rapid Championship</text>
+    <text x="0" y="165" fill="#888888" font-family="'Inter', sans-serif" font-size="12">Pattern recognition, anticipatory branching, and time pressure control.</text>
+    <text x="0" y="185" fill="#888888" font-family="'Inter', sans-serif" font-size="12">Directly trains algorithmic reasoning and engineering resilience.</text>
+    
+    <rect x="0" y="220" width="220" height="36" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.1)"/>
+    <text x="15" y="243" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="11">District Rapid • 2022–23</text>
+  </g>
+</svg>

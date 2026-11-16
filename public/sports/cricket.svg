@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cricGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141d17"/>
+      <stop offset="100%" stop-color="#0a100c"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="16" fill="url(#cricGrad)"/>
+  <circle cx="450" cy="200" r="140" fill="none" stroke="rgba(215, 241, 113, 0.08)" stroke-width="2"/>
+  <circle cx="450" cy="200" r="100" fill="none" stroke="rgba(215, 241, 113, 0.12)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- Cricket visual elements -->
+  <g transform="translate(380, 100)">
+    <!-- Stumps -->
+    <rect x="50" y="80" width="8" height="120" rx="4" fill="#E8E6E1"/>
+    <rect x="70" y="80" width="8" height="120" rx="4" fill="#E8E6E1"/>
+    <rect x="90" y="80" width="8" height="120" rx="4" fill="#E8E6E1"/>
+    <!-- Bails -->
+    <rect x="46" y="74" width="28" height="6" rx="2" fill="#D7F171"/>
+    <rect x="74" y="74" width="28" height="6" rx="2" fill="#D7F171"/>
+    <!-- Cricket Ball -->
+    <circle cx="15" cy="140" r="18" fill="#c0392b" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M 0 135 C 15 130, 20 150, 30 145" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"/>
+  </g>
+
+  <!-- Content text -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="130" height="26" rx="13" fill="#D7F171"/>
+    <text x="65" y="17" fill="#111111" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">CRICKET // ALL-ROUNDER</text>
+    <text x="0" y="65" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Tactical Strategy &amp;</text>
+    <text x="0" y="100" fill="#B8A1E3" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Team Leadership</text>
+    <text x="0" y="140" fill="#AAAAAA" font-family="'Inter', sans-serif" font-size="13">Inter-College Tournament Semi-Finalist</text>
+    <text x="0" y="165" fill="#888888" font-family="'Inter', sans-serif" font-size="12">Disciplined medium-pace seam bowling &amp; tactical middle-order batting.</text>
+    <text x="0" y="185" fill="#888888" font-family="'Inter', sans-serif" font-size="12">Calm execution under pressure with sharp fielding placement.</text>
+    
+    <rect x="0" y="220" width="220" height="36" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.1)"/>
+    <text x="15" y="243" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="11">Vice-Captain • Season 2024–25</text>
+  </g>
+</svg>

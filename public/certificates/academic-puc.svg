@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="certBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFBF9"/>
+      <stop offset="100%" stop-color="#F5F3EC"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="12" fill="url(#certBg)"/>
+
+  <!-- Ornate Double Border -->
+  <rect x="24" y="24" width="752" height="512" fill="none" stroke="#171717" stroke-width="2"/>
+  <rect x="32" y="32" width="736" height="496" fill="none" stroke="#C5A059" stroke-width="1.5" stroke-dasharray="8 4"/>
+
+  <!-- Header -->
+  <text x="400" y="85" fill="#171717" font-family="'Playfair Display', serif" font-size="24" font-weight="700" text-anchor="middle" letter-spacing="1">DEPARTMENT OF PRE-UNIVERSITY EDUCATION</text>
+  <text x="400" y="112" fill="#777777" font-family="'Space Grotesk', sans-serif" font-size="13" text-anchor="middle" letter-spacing="2">GOVERNMENT OF KARNATAKA</text>
+
+  <line x1="280" y1="130" x2="520" y2="130" stroke="#C5A059" stroke-width="1.5"/>
+
+  <!-- Certificate Body -->
+  <text x="400" y="175" fill="#171717" font-family="'Playfair Display', serif" font-size="18" font-style="italic" text-anchor="middle">This is to certify that</text>
+  
+  <text x="400" y="225" fill="#171717" font-family="'Satoshi', sans-serif" font-size="32" font-weight="800" text-anchor="middle" letter-spacing="-0.5">PRATHAMESH</text>
+  
+  <text x="400" y="265" fill="#555555" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle">has successfully completed the Higher Secondary Examination (Class 12 - PCMC)</text>
+  <text x="400" y="290" fill="#555555" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle">and secured Academic Distinction with an aggregate score of</text>
+
+  <!-- Big Grade Stamp -->
+  <rect x="310" y="315" width="180" height="50" rx="8" fill="#171717"/>
+  <text x="400" y="350" fill="#D7F171" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" text-anchor="middle">92% DISTINCTION</text>
+
+  <!-- Credentials Footer -->
+  <g transform="translate(60, 420)">
+    <line x1="0" y1="50" x2="180" y2="50" stroke="#171717" stroke-width="1"/>
+    <text x="90" y="68" fill="#777777" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">Controller of Examinations</text>
+  </g>
+
+  <!-- Gold Seal -->
+  <g transform="translate(400, 440)">
+    <circle cx="0" cy="0" r="38" fill="#F0E8D0" stroke="#C5A059" stroke-width="3"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#C5A059" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="0" y="5" fill="#C5A059" font-family="'Playfair Display', serif" font-size="10" font-weight="700" text-anchor="middle">VERIFIED</text>
+  </g>
+
+  <g transform="translate(560, 420)">
+    <line x1="0" y1="50" x2="180" y2="50" stroke="#171717" stroke-width="1"/>
+    <text x="90" y="68" fill="#777777" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">Principal / Registrar</text>
+  </g>
+
+  <text x="400" y="515" fill="#999999" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle">CREDENTIAL ID: KSEAB-2025-PUC-9204 • VERIFIED RECORD</text>
+</svg>

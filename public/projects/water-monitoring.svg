@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1218"/>
+      <stop offset="100%" stop-color="#050a0e"/>
+    </linearGradient>
+    <linearGradient id="waterFlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#142c3d"/>
+      <stop offset="100%" stop-color="#0a1721"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad3)"/>
+
+  <!-- Water Surface Layer -->
+  <path d="M 0 310 Q 200 290 400 310 T 800 300 L 800 500 L 0 500 Z" fill="url(#waterFlow)"/>
+  <path d="M 0 330 Q 180 345 380 325 T 800 340 L 800 500 L 0 500 Z" fill="#08141d" opacity="0.7"/>
+
+  <!-- Telemetry Sensor Buoy -->
+  <g transform="translate(180, 240)">
+    <!-- Buoy Base -->
+    <path d="M 0 50 L 20 85 L 60 85 L 80 50 Z" fill="#D7F171" stroke="#FFFFFF" stroke-width="1.5"/>
+    <rect x="25" y="10" width="30" height="40" rx="4" fill="#171717" stroke="#D7F171" stroke-width="1.5"/>
+    <line x1="40" y1="10" x2="40" y2="-25" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="40" cy="-28" r="5" fill="#B8A1E3"/>
+    
+    <!-- Sonar / Wireless telemetry waves -->
+    <circle cx="40" cy="-28" r="18" fill="none" stroke="#B8A1E3" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="40" cy="-28" r="32" fill="none" stroke="#B8A1E3" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+    
+    <!-- Submerged sensors -->
+    <line x1="40" y1="85" x2="40" y2="150" stroke="#888888" stroke-width="2"/>
+    <rect x="32" y="150" width="16" height="30" rx="3" fill="#33c177"/>
+    <text x="60" y="170" fill="#33c177" font-family="'JetBrains Mono', monospace" font-size="9">pH: 7.2 | Turb: 12 NTU</text>
+  </g>
+
+  <!-- Computer Vision Target Detection Bounding Box -->
+  <g transform="translate(480, 260)">
+    <rect x="0" y="0" width="160" height="95" rx="4" fill="none" stroke="#D7F171" stroke-width="2" stroke-dasharray="6 3"/>
+    <rect x="0" y="-22" width="130" height="22" rx="4" fill="#D7F171"/>
+    <text x="8" y="-6" fill="#111111" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">PLASTIC_DEBRIS 94%</text>
+    
+    <!-- Simulated floating plastic debris shape -->
+    <path d="M 40 45 Q 60 30 90 40 Q 120 50 110 65 Q 80 75 50 65 Z" fill="#2d4050" stroke="#7799aa" stroke-width="1.5"/>
+    <circle cx="130" cy="50" r="12" fill="#3a4f61"/>
+  </g>
+
+  <!-- Secondary Detection Box -->
+  <g transform="translate(360, 200)">
+    <rect x="0" y="0" width="90" height="60" rx="3" fill="none" stroke="#B8A1E3" stroke-width="1.5"/>
+    <text x="4" y="-6" fill="#B8A1E3" font-family="'JetBrains Mono', monospace" font-size="9">BIO-ORGANIC 87%</text>
+  </g>
+
+  <!-- Command Dashboard HUD Top -->
+  <rect x="30" y="30" width="420" height="75" rx="10" fill="rgba(10, 20, 30, 0.75)" stroke="rgba(255, 255, 255, 0.1)" backdrop-filter="blur(10px)"/>
+  <text x="50" y="55" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">SIH 2024 AQUA-VISION TELEMETRY</text>
+  <text x="50" y="74" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="11">Real-time River Plastic Detection Pipeline • Team Byte Me</text>
+  <text x="50" y="91" fill="#AAAAAA" font-family="'JetBrains Mono', monospace" font-size="9.5">Model: YOLO-AquaV4 | Ingest Latency: 42ms | GPS: 31.24° N, 75.70° E</text>
+</svg>

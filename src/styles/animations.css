@@ -1,0 +1,163 @@
+/* Keyframes & Motion Classes */
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+@keyframes float-ambient {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes float-ambient-alt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-1.5deg); }
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes grain-shift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(12%, 9%); }
+  70% { transform: translate(9%, 4%); }
+  90% { transform: translate(-1%, 7%); }
+}
+
+/* Reusable Animation Classes */
+.animate-float {
+  animation: float-ambient 6s ease-in-out infinite;
+}
+
+.animate-float-alt {
+  animation: float-ambient-alt 7s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Mask Reveal Utilities */
+.mask-reveal-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+.mask-reveal-content {
+  transform: translateY(100%);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.is-revealed .mask-reveal-content {
+  transform: translateY(0%);
+}
+
+/* Image Clip-path Masking */
+.clip-reveal {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clip-reveal.active {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Spotlight Effect */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.spotlight-card:hover {
+  border-color: rgba(23, 23, 23, 0.2);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.spotlight-dark-card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xl);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.spotlight-dark-card:hover {
+  border-color: rgba(215, 241, 113, 0.3);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Cursor Styles */
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s, background-color 0.25s, opacity 0.25s;
+}
+
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(23, 23, 23, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-editorial), height 0.3s var(--ease-editorial), border-color 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+body.cursor-dark .custom-cursor-dot {
+  background-color: var(--accent-lime);
+}
+
+body.cursor-dark .custom-cursor-follower {
+  border-color: rgba(215, 241, 113, 0.5);
+}
+
+body.cursor-hover .custom-cursor-dot {
+  opacity: 0;
+}
+
+body.cursor-hover .custom-cursor-follower {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(215, 241, 113, 0.15);
+  border-color: var(--accent-lime);
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor-dot,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}

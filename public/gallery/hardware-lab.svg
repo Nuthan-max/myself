@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="labBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151821"/>
+      <stop offset="100%" stop-color="#0a0c12"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#labBg)"/>
+  
+  <!-- Oscilloscope in Lab -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="340" height="260" rx="10" fill="#202430" stroke="#3d4458" stroke-width="2"/>
+    <!-- Screen -->
+    <rect x="25" y="25" width="200" height="150" rx="6" fill="#081014" stroke="#25825d" stroke-width="1.5"/>
+    <!-- Grid -->
+    <g stroke="rgba(51, 193, 119, 0.15)" stroke-width="1">
+      <line x1="25" y1="62" x2="225" y2="62"/>
+      <line x1="25" y1="100" x2="225" y2="100"/>
+      <line x1="25" y1="138" x2="225" y2="138"/>
+      <line x1="75" y1="25" x2="75" y2="175"/>
+      <line x1="125" y1="25" x2="125" y2="175"/>
+      <line x1="175" y1="25" x2="175" y2="175"/>
+    </g>
+    <!-- Sine wave -->
+    <path d="M 25 100 Q 50 40 75 100 T 125 100 T 175 100 T 225 100" fill="none" stroke="#D7F171" stroke-width="2.5"/>
+    <!-- Knobs & buttons -->
+    <g fill="#4a536b">
+      <circle cx="260" cy="50" r="14" fill="#353b4d" stroke="#D7F171" stroke-width="1.5"/>
+      <circle cx="300" cy="50" r="14" fill="#353b4d" stroke="#B8A1E3" stroke-width="1.5"/>
+      <circle cx="260" cy="110" r="18" fill="#353b4d"/>
+      <circle cx="300" cy="110" r="14" fill="#353b4d"/>
+      <rect x="250" y="160" width="60" height="15" rx="3" fill="#D7F171"/>
+      <text x="280" y="171" fill="#111" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">CH1 ACTIVE</text>
+    </g>
+    <!-- BNC probes -->
+    <circle cx="60" cy="215" r="10" fill="#111" stroke="#888" stroke-width="2"/>
+    <circle cx="120" cy="215" r="10" fill="#111" stroke="#888" stroke-width="2"/>
+    <circle cx="180" cy="215" r="10" fill="#111" stroke="#888" stroke-width="2"/>
+  </g>
+
+  <!-- Breadboard Rig Right -->
+  <g transform="translate(480, 130)">
+    <rect x="0" y="0" width="220" height="230" rx="8" fill="#F7F6F2" stroke="#E8E6E1" stroke-width="2"/>
+    <!-- Breadboard pin strip dots -->
+    <g fill="#999999">
+      <circle cx="30" cy="30" r="2"/><circle cx="50" cy="30" r="2"/><circle cx="70" cy="30" r="2"/><circle cx="90" cy="30" r="2"/><circle cx="110" cy="30" r="2"/>
+      <circle cx="30" cy="50" r="2"/><circle cx="50" cy="50" r="2"/><circle cx="70" cy="50" r="2"/><circle cx="90" cy="50" r="2"/><circle cx="110" cy="50" r="2"/>
+      <circle cx="30" cy="70" r="2"/><circle cx="50" cy="70" r="2"/><circle cx="70" cy="70" r="2"/><circle cx="90" cy="70" r="2"/><circle cx="110" cy="70" r="2"/>
+    </g>
+    <!-- IC Chip -->
+    <rect x="40" y="90" width="80" height="40" rx="3" fill="#171717"/>
+    <text x="80" y="115" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">LM358 OP-AMP</text>
+    <!-- Jumper Wires -->
+    <path d="M 35 110 Q 15 150 45 180" fill="none" stroke="#ff4d4d" stroke-width="2.5"/>
+    <path d="M 125 110 Q 165 80 180 160" fill="none" stroke="#2575fc" stroke-width="2.5"/>
+    <path d="M 80 130 Q 100 170 140 180" fill="none" stroke="#D7F171" stroke-width="2.5"/>
+  </g>
+
+  <text x="100" y="420" fill="#D7F171" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">UNIVERSITY HARDWARE LAB BENCH 04</text>
+  <text x="100" y="442" fill="#888888" font-family="'JetBrains Mono', monospace" font-size="11">Tektronix 100MHz Dual-Channel DSO • Analog Signal Filtering Verification</text>
+</svg>

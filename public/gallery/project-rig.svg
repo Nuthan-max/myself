@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rigGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14171d"/>
+      <stop offset="100%" stop-color="#0a0c0e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" rx="16" fill="url(#rigGrad)"/>
+  
+  <!-- Rig apparatus -->
+  <g transform="translate(100, 80)">
+    <!-- Acrylic / Aluminium Stage -->
+    <rect x="0" y="240" width="400" height="30" rx="4" fill="#2d3340" stroke="#4a5266"/>
+    <rect x="60" y="80" width="280" height="160" rx="6" fill="#1b2029" stroke="#D7F171" stroke-width="2"/>
+
+    <!-- Vibration Sensor mount -->
+    <circle cx="200" cy="160" r="30" fill="#26784e" stroke="#D7F171" stroke-width="2"/>
+    <text x="200" y="165" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">PIEZO-X</text>
+
+    <!-- Calibration dial -->
+    <circle cx="100" cy="160" r="16" fill="#111" stroke="#B8A1E3" stroke-width="1.5"/>
+    <circle cx="300" cy="160" r="16" fill="#111" stroke="#B8A1E3" stroke-width="1.5"/>
+
+    <!-- Leads -->
+    <path d="M 200 130 L 200 60 L 320 60" fill="none" stroke="#D7F171" stroke-width="2"/>
+    <path d="M 200 190 L 200 230" fill="none" stroke="#ff4d4d" stroke-width="2"/>
+  </g>
+
+  <!-- Technical Overlay HUD -->
+  <rect x="60" y="440" width="480" height="90" rx="10" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.08)"/>
+  <text x="85" y="472" fill="#D7F171" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">EXPERIMENTAL SHM TESTING BENCH</text>
+  <text x="85" y="494" fill="#AAAAAA" font-family="'Inter', sans-serif" font-size="12">Specimen Beam: Aluminum 6061-T6 • Resonance Frequency: 48.6 Hz</text>
+  <text x="85" y="514" fill="#888888" font-family="'JetBrains Mono', monospace" font-size="11">Sensor Node: ESP32 + MPU6050 + Piezo Film (Rev 3.2)</text>
+</svg>
