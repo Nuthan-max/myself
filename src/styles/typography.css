@@ -1,78 +1,69 @@
-/* Typography System */
+/* Unified Modern Typography System */
 
 body {
   font-family: var(--font-body);
   color: var(--text-primary);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.96rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Display & Headings */
+/* Font Families */
 .font-interface {
   font-family: var(--font-interface);
 }
 
-.font-editorial {
-  font-family: var(--font-editorial);
-}
-
-.font-technical {
-  font-family: var(--font-technical);
+.font-body {
+  font-family: var(--font-body);
 }
 
 .font-mono {
   font-family: var(--font-mono);
 }
 
-/* Oversized Display Typography */
+/* Headings & Display Scale (Calibrated & Balanced) */
 .display-hero {
   font-family: var(--font-interface);
-  font-size: clamp(2.75rem, 8vw, 6.75rem);
-  font-weight: 800;
-  line-height: 0.96;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  font-weight: 750;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
   color: var(--text-primary);
-}
-
-.display-hero .editorial-italic {
-  font-family: var(--font-editorial);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--accent-lavender);
 }
 
 .display-title {
   font-family: var(--font-interface);
-  font-size: clamp(2.2rem, 5vw, 4.25rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
 }
 
 .heading-section {
   font-family: var(--font-interface);
-  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .heading-card {
-  font-family: var(--font-technical);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-family: var(--font-interface);
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
 }
 
-/* Technical Badges & Metadata */
+/* Technical Badges & Telemetry Labels */
 .label-mono {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--text-secondary);
@@ -80,40 +71,41 @@ body {
 
 .tag-tech {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  padding: 0.3rem 0.75rem;
-  background-color: rgba(23, 23, 23, 0.04);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  padding: 0.32rem 0.7rem;
+  background-color: rgba(18, 19, 22, 0.04);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   color: var(--text-primary);
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   transition: all var(--transition-fast);
 }
 
-.dark-mode .tag-tech {
+.dark-mode .tag-tech,
+.section-dark .tag-tech {
   background-color: rgba(255, 255, 255, 0.06);
   border-color: var(--border-dark);
   color: var(--text-light);
 }
 
-/* Editorial Body */
+/* Editorial Body Text */
 .body-lead {
-  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-  line-height: 1.6;
+  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+  line-height: 1.68;
   color: var(--text-secondary);
   font-weight: 400;
 }
 
 .body-regular {
-  font-size: 0.95rem;
+  font-size: 0.94rem;
   line-height: 1.65;
   color: var(--text-secondary);
 }
 
-.text-editorial {
-  font-family: var(--font-editorial);
-  font-style: italic;
+.text-accent-highlight {
+  color: var(--accent-lavender);
+  font-weight: 600;
 }

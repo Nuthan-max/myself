@@ -14,10 +14,10 @@ export default function Certificates({ onSelectCertificate }) {
     <section id="certificates" className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
         <SectionHeading
-          badge="07 // DIGITAL ARCHIVE"
+          badge="07 // ARCHIVE"
           title="Verifiable Credentials &amp;"
-          italicWord="Achievement Records."
-          subtitle="A high-resolution archive of academic board records, national hackathon accomplishments, circuit EDA credentials, and athletic awards."
+          highlightWord="Certifications."
+          subtitle="Official academic board records, national hackathon accomplishments, circuit EDA credentials, and athletic awards."
         />
 
         {/* Category Filter Tabs */}

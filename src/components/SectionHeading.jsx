@@ -3,7 +3,7 @@ import React from 'react';
 export default function SectionHeading({
   badge,
   title,
-  italicWord,
+  highlightWord,
   subtitle,
   align = 'left',
   isDark = false
@@ -13,9 +13,9 @@ export default function SectionHeading({
   return (
     <div
       style={{
-        marginBottom: 'clamp(2.5rem, 5vw, 4.5rem)',
+        marginBottom: 'clamp(2rem, 4vw, 3.5rem)',
         textAlign: isCentered ? 'center' : 'left',
-        maxWidth: isCentered ? '820px' : '900px',
+        maxWidth: isCentered ? '760px' : '840px',
         marginLeft: isCentered ? 'auto' : 0,
         marginRight: isCentered ? 'auto' : 0
       }}
@@ -25,8 +25,8 @@ export default function SectionHeading({
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '0.5rem',
-            marginBottom: '1rem'
+            gap: '0.45rem',
+            marginBottom: '0.85rem'
           }}
         >
           <span
@@ -41,7 +41,7 @@ export default function SectionHeading({
             className="label-mono"
             style={{
               color: isDark ? 'var(--accent-lime)' : 'var(--text-secondary)',
-              letterSpacing: '0.12em'
+              letterSpacing: '0.08em'
             }}
           >
             {badge}
@@ -53,19 +53,18 @@ export default function SectionHeading({
         className="heading-section"
         style={{
           color: isDark ? 'var(--text-light)' : 'var(--text-primary)',
-          marginBottom: subtitle ? '1rem' : 0
+          marginBottom: subtitle ? '0.75rem' : 0
         }}
       >
         {title}{' '}
-        {italicWord && (
+        {highlightWord && (
           <span
-            className="editorial-italic"
             style={{
               color: isDark ? 'var(--accent-lime)' : 'var(--accent-lavender)',
-              fontWeight: 400
+              fontWeight: 700
             }}
           >
-            {italicWord}
+            {highlightWord}
           </span>
         )}
       </h2>

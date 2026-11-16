@@ -8,10 +8,10 @@ export default function Education({ onSelectCertificate }) {
     <section id="education" className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container">
         <SectionHeading
-          badge="02 // ACADEMIC JOURNEY"
+          badge="02 // ACADEMIC RECORD"
           title="Formal Education &amp;"
-          italicWord="Academic Milestones."
-          subtitle="A verifiable vertical chronicle of secondary foundation, higher secondary distinction (92%), and ongoing undergraduate engineering study."
+          highlightWord="Academic Milestones."
+          subtitle="A verifiable timeline of secondary foundation, higher secondary distinction (92%), and ongoing undergraduate engineering study."
         />
 
         {/* Vertical Editorial Timeline */}

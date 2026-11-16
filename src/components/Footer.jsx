@@ -43,13 +43,13 @@ export default function Footer() {
             <h3
               className="font-interface"
               style={{
-                fontSize: 'clamp(1.6rem, 3vw, 2.5rem)',
+                fontSize: 'clamp(1.35rem, 2.2vw, 1.8rem)',
                 fontWeight: 700,
                 letterSpacing: '-0.02em',
                 color: 'var(--text-light)'
               }}
             >
-              Prathamesh • <span style={{ color: 'var(--accent-lavender)', fontStyle: 'italic', fontFamily: 'var(--font-editorial)' }}>ECE Undergraduate</span>
+              Prathamesh • <span style={{ color: 'var(--accent-lavender)', fontWeight: 600 }}>ECE Undergraduate</span>
             </h3>
             <p
               style={{

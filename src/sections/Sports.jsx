@@ -10,9 +10,9 @@ export default function Sports({ onSelectCertificate, onOpenLightbox }) {
     <section id="sports" className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container">
         <SectionHeading
-          badge="06 // BEYOND ENGINEERING"
-          title="Athletics, Competitive Sports &amp;"
-          italicWord="Extracurricular Drive."
+          badge="06 // ATHLETICS &amp; DRIVE"
+          title="Competitive Sports &amp;"
+          highlightWord="Extracurriculars."
           subtitle="Physical endurance, team leadership on the pitch, and fast tactical decision-making — grounding algorithmic rigor in real-world athleticism."
         />
 

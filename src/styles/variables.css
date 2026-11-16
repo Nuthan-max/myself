@@ -1,29 +1,27 @@
 :root {
-  /* Master Palette */
+  /* Master Palette - Clean, calm, high-end editorial */
   --bg-primary: #F7F6F2;       /* Warm Ivory */
   --bg-secondary: #FFFFFF;     /* Soft White */
   --bg-card: #FFFFFF;
-  --bg-dark: #111111;          /* Midnight */
-  --bg-dark-card: #191919;
-  --bg-dark-subtle: #1C1C1E;
+  --bg-dark: #0F1012;          /* Clean Midnight */
+  --bg-dark-card: #18191C;
+  --bg-dark-subtle: #222428;
 
-  --text-primary: #171717;     /* Obsidian */
-  --text-secondary: #777777;   /* Slate Grey */
-  --text-muted: #999999;
+  --text-primary: #121316;     /* Deep Obsidian */
+  --text-secondary: #5F6368;   /* Balanced Muted Charcoal */
+  --text-muted: #8A8F98;
   --text-light: #F7F6F2;
-  --text-light-secondary: #A0A0A0;
+  --text-light-secondary: #A0A5B0;
 
-  --accent-lavender: #B8A1E3;  /* Muted Lavender */
-  --accent-lime: #D7F171;      /* Electric Lime */
-  --border-color: #E8E6E1;     /* Soft Grey */
-  --border-dark: #2A2A2A;
+  --accent-lavender: #8B6FD8;  /* Refined Lavender */
+  --accent-lime: #CEEA50;      /* Calibrated Electric Lime */
+  --border-color: #E6E4DF;     /* Subtle Crisp Grey */
+  --border-dark: #26282E;
 
-  /* Typography Stacks */
-  --font-interface: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-editorial: 'Playfair Display', Georgia, serif;
-  --font-technical: 'Space Grotesk', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  /* Unified Premium Modern Typography Stack */
+  --font-interface: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
 
   /* Spacing Scale */
   --space-xs: 0.25rem;
@@ -33,33 +31,26 @@
   --space-xl: 2.5rem;
   --space-2xl: 4rem;
   --space-3xl: 6rem;
-  --space-4xl: 9rem;
+  --space-4xl: 8rem;
 
   /* Layout */
-  --container-max: 1320px;
-  --container-pad: clamp(1.25rem, 5vw, 3rem);
-  --header-height: 80px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --container-max: 1240px;
+  --container-pad: clamp(1.25rem, 4vw, 2.75rem);
+  --header-height: 72px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
   --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-xl: 20px;
   --radius-pill: 9999px;
 
   /* Transitions */
-  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --transition-fast: 0.2s var(--ease-smooth);
-  --transition-normal: 0.4s var(--ease-editorial);
-  --transition-slow: 0.8s var(--ease-editorial);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.35s var(--ease-smooth);
 
-  /* Shadows & Glass */
-  --glass-bg: rgba(247, 246, 242, 0.75);
-  --glass-bg-dark: rgba(17, 17, 17, 0.85);
-  --glass-border: rgba(232, 230, 225, 0.6);
-  --glass-border-dark: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(16px);
-  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
-  --shadow-medium: 0 12px 36px rgba(0, 0, 0, 0.07);
-  --shadow-card-hover: 0 20px 48px rgba(0, 0, 0, 0.1);
-  --shadow-dark: 0 20px 48px rgba(0, 0, 0, 0.5);
+  /* Shadows */
+  --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.03);
+  --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 16px 36px rgba(0, 0, 0, 0.08);
+  --shadow-dark: 0 16px 40px rgba(0, 0, 0, 0.4);
 }

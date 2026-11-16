@@ -7,8 +7,7 @@ export default function Preloader({ onComplete }) {
   useEffect(() => {
     let current = 0;
     const interval = setInterval(() => {
-      // Non-linear realistic loading increment
-      const step = Math.floor(Math.random() * 12) + 4;
+      const step = Math.floor(Math.random() * 14) + 6;
       current = Math.min(current + step, 100);
       setPercent(current);
 
@@ -18,10 +17,10 @@ export default function Preloader({ onComplete }) {
           setIsDone(true);
           setTimeout(() => {
             if (onComplete) onComplete();
-          }, 600);
-        }, 300);
+          }, 500);
+        }, 200);
       }
-    }, 45);
+    }, 40);
 
     return () => clearInterval(interval);
   }, [onComplete]);
@@ -32,33 +31,33 @@ export default function Preloader({ onComplete }) {
         position: 'fixed',
         inset: 0,
         zIndex: 99999,
-        backgroundColor: '#111111',
+        backgroundColor: '#0F1012',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        padding: 'clamp(1.5rem, 4vw, 3rem)',
+        padding: 'clamp(1.5rem, 3.5vw, 2.5rem)',
         transform: isDone ? 'translateY(-100%)' : 'translateY(0%)',
-        transition: 'transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)',
+        transition: 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)',
         pointerEvents: isDone ? 'none' : 'auto'
       }}
     >
       {/* Top Bar */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
           <div
             style={{
-              width: '12px',
-              height: '12px',
-              backgroundColor: '#D7F171',
+              width: '8px',
+              height: '8px',
+              backgroundColor: '#CEEA50',
               borderRadius: '2px'
             }}
           />
-          <span className="label-mono" style={{ color: '#D7F171', letterSpacing: '0.15em' }}>
-            NEXUS OS // INITIALIZING
+          <span className="label-mono" style={{ color: '#CEEA50', letterSpacing: '0.1em' }}>
+            NEXUS // PORTFOLIO
           </span>
         </div>
-        <span className="label-mono" style={{ color: '#777777' }}>
-          ECE DEPT • PRATHAMESH
+        <span className="label-mono" style={{ color: '#888888' }}>
+          PRATHAMESH • ECE
         </span>
       </div>
 
@@ -69,54 +68,54 @@ export default function Preloader({ onComplete }) {
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: '90px',
-            height: '90px',
-            borderRadius: '24px',
-            border: '1px solid rgba(255,255,255,0.12)',
-            backgroundColor: '#191919',
-            marginBottom: '1.5rem'
+            width: '72px',
+            height: '72px',
+            borderRadius: '16px',
+            border: '1px solid rgba(255,255,255,0.1)',
+            backgroundColor: '#18191C',
+            marginBottom: '1.25rem'
           }}
         >
-          <svg width="44" height="44" viewBox="0 0 64 64" fill="none">
+          <svg width="34" height="34" viewBox="0 0 64 64" fill="none">
             <path
               d="M18 46V18L32 36V18M46 18V46L32 28V46"
-              stroke="#D7F171"
+              stroke="#CEEA50"
               strokeWidth="4"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-            <circle cx="32" cy="32" r="4" fill="#B8A1E3" />
+            <circle cx="32" cy="32" r="3.5" fill="#8B6FD8" />
           </svg>
         </div>
-        <h1
+        <h2
           className="font-interface"
           style={{
-            fontSize: 'clamp(1.8rem, 4vw, 3.2rem)',
-            fontWeight: 800,
-            letterSpacing: '-0.03em',
+            fontSize: 'clamp(1.4rem, 2.8vw, 2rem)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
             color: '#F7F6F2',
-            marginBottom: '0.5rem'
+            marginBottom: '0.35rem'
           }}
         >
-          Building. Exploring. <span style={{ color: '#D7F171', fontStyle: 'italic', fontFamily: 'var(--font-editorial)' }}>Creating.</span>
-        </h1>
-        <p className="label-mono" style={{ color: '#888888', letterSpacing: '0.08em' }}>
-          PERSONAL DIGITAL IDENTITY ARCHIVE
+          Prathamesh
+        </h2>
+        <p className="label-mono" style={{ color: '#8A8F98', letterSpacing: '0.06em' }}>
+          ELECTRONICS &amp; COMMUNICATION ENGINEERING
         </p>
       </div>
 
       {/* Bottom Loading Bar */}
       <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.75rem' }}>
-          <span className="label-mono" style={{ color: '#888888' }}>
-            OPTIMIZING HARDWARE &amp; TELEMETRY MODULES
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.6rem' }}>
+          <span className="label-mono" style={{ color: '#888888', fontSize: '0.68rem' }}>
+            LOADING SYSTEM MODULES
           </span>
           <span
             className="font-mono"
             style={{
-              fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+              fontSize: '1.4rem',
               fontWeight: 700,
-              color: '#D7F171'
+              color: '#CEEA50'
             }}
           >
             {percent}%
@@ -125,8 +124,8 @@ export default function Preloader({ onComplete }) {
         <div
           style={{
             width: '100%',
-            height: '3px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            height: '2px',
+            backgroundColor: 'rgba(255, 255, 255, 0.08)',
             borderRadius: '999px',
             overflow: 'hidden'
           }}
@@ -135,7 +134,7 @@ export default function Preloader({ onComplete }) {
             style={{
               width: `${percent}%`,
               height: '100%',
-              backgroundColor: '#D7F171',
+              backgroundColor: '#CEEA50',
               transition: 'width 0.1s linear'
             }}
           />

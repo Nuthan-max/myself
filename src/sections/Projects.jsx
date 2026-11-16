@@ -11,10 +11,10 @@ export default function Projects({ onSelectProject }) {
     <section id="projects" className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container">
         <SectionHeading
-          badge="04 // FEATURED ENGINEERING"
-          title="Selected Systems &amp;"
-          italicWord="Technical Projects."
-          subtitle="A showcase of applied cyber-physical hardware, graph-search pathfinding heuristics, and computer vision models developed for national hackathons and academic research."
+          badge="04 // PROJECTS"
+          title="Featured Systems &amp;"
+          highlightWord="Engineering Work."
+          subtitle="Applied cyber-physical hardware, graph-search pathfinding simulations, and computer vision models developed for hackathons and academic study."
         />
 
         {/* Big Photographic Project Cards Stack */}

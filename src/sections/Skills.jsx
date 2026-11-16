@@ -20,10 +20,10 @@ export default function Skills() {
     <section id="skills" className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
         <SectionHeading
-          badge="03 // DIRECTORY OF COMPETENCE"
-          title="Engineered Capabilities &amp;"
-          italicWord="Technical Stack."
-          subtitle="An interactive skills directory grounded in practical lab work, PCB synthesis, and software architectures. No generic percentage bars."
+          badge="03 // SKILLS"
+          title="Technical Competencies &amp;"
+          highlightWord="Applied Stack."
+          subtitle="Practical hardware, circuit design, and software engineering capabilities developed through laboratory coursework and real builds."
         />
 
         {/* Category Switcher Tabs */}

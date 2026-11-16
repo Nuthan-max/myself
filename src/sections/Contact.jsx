@@ -25,10 +25,10 @@ export default function Contact() {
     <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
       <div className="container">
         <SectionHeading
-          badge="09 // GET IN TOUCH"
+          badge="09 // CONTACT"
           title="Let's connect &amp;"
-          italicWord="Collaborate."
-          subtitle="Open to learning, collaboration and meaningful technical projects. Whether inquiring about circuit design, hackathon teamwork, or academic research, let's start a dialogue."
+          highlightWord="Collaborate."
+          subtitle="Open to technical collaboration, hackathon invitations, and academic research discussions."
         />
 
         <div

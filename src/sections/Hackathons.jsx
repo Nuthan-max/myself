@@ -10,10 +10,10 @@ export default function Hackathons({ onSelectCertificate }) {
     <section id="hackathons" className="section-padding section-dark">
       <div className="container">
         <SectionHeading
-          badge="05 // HIGH INTENSITY COLLABORATION"
+          badge="05 // HACKATHONS"
           title="Hackathons &amp; Collegiate"
-          italicWord="Innovation Sprints."
-          subtitle="A dark-mode editorial chronicle of high-pressure 24h &amp; 36h innovation challenges, rapid prototyping under Team Byte Me, and verifiable national evaluations."
+          highlightWord="Innovation Sprints."
+          subtitle="High-intensity 24h &amp; 36h innovation challenges, rapid prototyping under Team Byte Me, and verifiable evaluations."
           isDark={true}
         />
 

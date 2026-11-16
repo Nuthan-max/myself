@@ -16,10 +16,10 @@ export default function Gallery({ onOpenLightbox }) {
     <section id="gallery" className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container">
         <SectionHeading
-          badge="08 // VISUAL ARCHIVE"
-          title="Editorial Moments &amp;"
-          italicWord="Visual Chronicle."
-          subtitle="A curated photographic narrative capturing laboratory instrumentation, competitive sports, hackathons, and university life."
+          badge="08 // GALLERY"
+          title="Moments &amp;"
+          highlightWord="Visual Archive."
+          subtitle="A photographic narrative capturing laboratory instrumentation, competitive sports, hackathons, and university life."
         />
 
         {/* Filter Pills */}

@@ -1,14 +1,14 @@
 import React from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { personalData } from '../data/personal';
-import { MapPin, GraduationCap, Compass, Sparkles, BookOpen, Layers } from 'lucide-react';
+import { MapPin, GraduationCap, Sparkles, BookOpen, Layers } from 'lucide-react';
 
 export default function About() {
   const metadataItems = [
     { label: 'Current Degree', value: personalData.degree, icon: GraduationCap },
     { label: 'University', value: personalData.university, icon: BookOpen },
     { label: 'Academic Standing', value: personalData.currentYear, icon: Layers },
-    { label: 'Location & Origin', value: personalData.location, icon: MapPin },
+    { label: 'Location', value: personalData.location, icon: MapPin },
   ];
 
   const interestPills = [
@@ -17,28 +17,28 @@ export default function About() {
     'Computer Vision & Object Detection',
     'Dynamic Graph Pathfinding',
     'Edge Machine Learning Telemetry',
-    'Luxury Web Architecture'
+    'Modern Web Engineering'
   ];
 
   return (
     <section id="about" className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
         <SectionHeading
-          badge="01 // IDENTITY"
-          title="Bridging Hardware Rigor with"
-          italicWord="Software Elegance."
-          subtitle="An editorial perspective on my academic journey, engineering philosophy, and the intersections between physical circuits and computational logic."
+          badge="01 // BACKGROUND"
+          title="Bridging physical electronics with"
+          highlightWord="software craft."
+          subtitle="Academic foundation, engineering philosophy, and the intersections between physical circuits and computational logic."
         />
 
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: 'clamp(2rem, 5vw, 4.5rem)',
+            gap: 'clamp(2rem, 4.5vw, 4rem)',
             alignItems: 'flex-start'
           }}
         >
-          {/* Left Column: Asymmetric Visual & Metadata Card */}
+          {/* Left Column: Visual & Metadata Card */}
           <div
             style={{ gridColumn: 'span 12' }}
             className="hero-right-col"
@@ -46,7 +46,7 @@ export default function About() {
             <div
               style={{
                 position: 'sticky',
-                top: '110px'
+                top: '95px'
               }}
             >
               <div
@@ -56,49 +56,49 @@ export default function About() {
                   border: '1px solid var(--border-color)',
                   backgroundColor: '#FFFFFF',
                   boxShadow: 'var(--shadow-medium)',
-                  marginBottom: '1.5rem'
+                  marginBottom: '1.25rem'
                 }}
               >
                 <img
                   src="/gallery/portrait.svg"
-                  alt="Prathamesh Engineering Profile"
+                  alt="Prathamesh Profile"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
 
-              {/* Monogram stamp */}
+              {/* Status pill */}
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '1rem 1.25rem',
+                  padding: '0.85rem 1.15rem',
                   backgroundColor: 'var(--bg-primary)',
-                  borderRadius: 'var(--radius-lg)',
+                  borderRadius: 'var(--radius-md)',
                   border: '1px solid var(--border-color)'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                   <div
                     style={{
-                      width: '10px',
-                      height: '10px',
+                      width: '8px',
+                      height: '8px',
                       borderRadius: '50%',
                       backgroundColor: 'var(--accent-lime)'
                     }}
                   />
                   <span className="label-mono" style={{ color: 'var(--text-primary)' }}>
-                    ARCHIVE ID: LPU-ECE-2026
+                    LPU • ECE UNDERGRADUATE
                   </span>
                 </div>
                 <span className="label-mono" style={{ color: 'var(--text-muted)' }}>
-                  PUNJAB / KARNATAKA
+                  CLASS OF 2029
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Editorial Bio, Academic Metadata, and Philosophy */}
+          {/* Right Column: Bio, Metadata, and Focus */}
           <div
             style={{ gridColumn: 'span 12' }}
             className="hero-left-col"
@@ -107,60 +107,58 @@ export default function About() {
             <p
               className="body-lead"
               style={{
-                fontSize: 'clamp(1.15rem, 1.6vw, 1.4rem)',
-                lineHeight: 1.7,
+                fontSize: 'clamp(1.05rem, 1.35vw, 1.2rem)',
+                lineHeight: 1.68,
                 color: 'var(--text-primary)',
-                marginBottom: '1.75rem'
+                marginBottom: '1.5rem'
               }}
             >
-              I am an undergraduate student in <strong>Electronics and Communication Engineering</strong> at <strong>Lovely Professional University</strong>. My work lives at the physical boundary where physical electronic signals convert into intelligent computational decisions.
+              I am an undergraduate student in <strong>Electronics and Communication Engineering</strong> at <strong>Lovely Professional University</strong>. My work focuses on the physical layer where electronic signals are measured, filtered, and converted into intelligent computational actions.
             </p>
 
             <p
               className="body-regular"
               style={{
-                fontSize: '1.02rem',
-                lineHeight: 1.8,
+                marginBottom: '1.75rem',
+                lineHeight: 1.7
+              }}
+            >
+              Having completed my Higher Secondary education with a <strong>92% academic distinction</strong> under the Karnataka State Board, I apply mathematical discipline and methodical testing to every build. From designing schematics in KiCad and programming microcontrollers to deploying graph search algorithms and computer vision models at national hackathons, I focus on practical, verifiable engineering.
+            </p>
+
+            {/* Quote Card */}
+            <div
+              style={{
+                padding: '1.25rem 1.5rem',
+                backgroundColor: 'var(--bg-primary)',
+                borderLeft: '3px solid var(--accent-lavender)',
+                borderRadius: '0 var(--radius-md) var(--radius-md) 0',
                 marginBottom: '2rem'
               }}
             >
-              Having completed my Higher Secondary education with a <strong>92% academic distinction</strong> under the Karnataka State Board, I approach engineering with equal measures of mathematical precision and hands-on curiosity. Whether designing 2-layer PCBs in KiCad, writing low-latency pathfinding simulations in Python, or training computer vision models for environmental telemetry at national hackathons, I focus on building systems that solve tangible, real-world problems.
-            </p>
-
-            {/* Editorial Quote Card */}
-            <div
-              style={{
-                padding: 'clamp(1.5rem, 3vw, 2.25rem)',
-                backgroundColor: 'var(--bg-primary)',
-                borderLeft: '4px solid var(--accent-lavender)',
-                borderRadius: '0 var(--radius-lg) var(--radius-lg) 0',
-                marginBottom: '2.5rem'
-              }}
-            >
               <p
-                className="font-editorial"
                 style={{
-                  fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)',
-                  fontStyle: 'italic',
+                  fontSize: '0.98rem',
                   lineHeight: 1.6,
                   color: 'var(--text-primary)',
-                  marginBottom: '1rem'
+                  marginBottom: '0.65rem',
+                  fontWeight: 500
                 }}
               >
                 "{personalData.editorialStatement}"
               </p>
               <span className="label-mono" style={{ color: 'var(--text-secondary)' }}>
-                — PRATHAMESH // PERSONAL IDENTITY MANIFESTO
+                — PRATHAMESH
               </span>
             </div>
 
-            {/* Structured Academic Metadata Cards */}
+            {/* Academic Metadata Cards */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                gap: '1rem',
-                marginBottom: '2.5rem'
+                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gap: '0.85rem',
+                marginBottom: '2rem'
               }}
             >
               {metadataItems.map((meta) => {
@@ -169,30 +167,30 @@ export default function About() {
                   <div
                     key={meta.label}
                     style={{
-                      padding: '1.25rem',
+                      padding: '1.1rem',
                       backgroundColor: '#FFFFFF',
                       borderRadius: 'var(--radius-md)',
                       border: '1px solid var(--border-color)',
                       display: 'flex',
                       alignItems: 'flex-start',
-                      gap: '0.85rem'
+                      gap: '0.75rem'
                     }}
                   >
                     <div
                       style={{
-                        padding: '0.5rem',
-                        borderRadius: '8px',
-                        backgroundColor: 'rgba(23, 23, 23, 0.04)',
+                        padding: '0.45rem',
+                        borderRadius: '6px',
+                        backgroundColor: 'rgba(18, 19, 22, 0.04)',
                         color: 'var(--text-primary)'
                       }}
                     >
-                      <IconComponent size={18} />
+                      <IconComponent size={16} />
                     </div>
                     <div>
-                      <div className="label-mono" style={{ fontSize: '0.68rem', marginBottom: '0.2rem' }}>
+                      <div className="label-mono" style={{ fontSize: '0.66rem', marginBottom: '0.15rem' }}>
                         {meta.label}
                       </div>
-                      <div style={{ fontSize: '0.92rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                      <div style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-primary)' }}>
                         {meta.value}
                       </div>
                     </div>
@@ -203,21 +201,21 @@ export default function About() {
 
             {/* Core Technical Focus Areas */}
             <div>
-              <div className="label-mono" style={{ color: 'var(--text-secondary)', marginBottom: '0.85rem' }}>
-                CURRENT RESEARCH &amp; TECHNICAL INTERESTS
+              <div className="label-mono" style={{ color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>
+                CURRENT TECHNICAL &amp; RESEARCH FOCUS
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {interestPills.map((pill) => (
                   <span
                     key={pill}
                     className="tag-tech"
                     style={{
-                      padding: '0.45rem 0.95rem',
-                      fontSize: '0.82rem',
+                      padding: '0.4rem 0.85rem',
+                      fontSize: '0.8rem',
                       backgroundColor: '#FFFFFF'
                     }}
                   >
-                    <Sparkles size={13} color="var(--accent-lavender)" />
+                    <Sparkles size={12} color="var(--accent-lavender)" />
                     {pill}
                   </span>
                 ))}
