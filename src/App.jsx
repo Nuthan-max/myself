@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
 import CustomCursor from './components/CustomCursor';
-import Preloader from './components/Preloader';
-import Navbar from './components/Navbar';
+import MenuBar from './components/MenuBar';
+import FloatingDock from './components/FloatingDock';
+import SpotlightSearch from './components/SpotlightSearch';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import CertificateModal from './components/CertificateModal';
 import ProjectDetailModal from './components/ProjectDetailModal';
-import LightboxModal from './components/LightboxModal';
 import CVModal from './components/CVModal';
 
 // Sections
@@ -19,22 +19,20 @@ import Projects from './sections/Projects';
 import Hackathons from './sections/Hackathons';
 import Sports from './sections/Sports';
 import Certificates from './sections/Certificates';
-import Gallery from './sections/Gallery';
 import Contact from './sections/Contact';
 
 // Data
 import { certificatesData } from './data/certificates';
 import { projectsData } from './data/projects';
-import { galleryData } from './data/gallery';
 
 export default function App() {
-  const [preloaderDone, setPreloaderDone] = useState(false);
   const [selectedCertId, setSelectedCertId] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [lightboxState, setLightboxState] = useState({ isOpen: false, item: null, allItems: [] });
   const [cvModalOpen, setCvModalOpen] = useState(false);
+  const [spotlightOpen, setSpotlightOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
-  // Initialize smooth scrolling with Lenis
+  // Smooth scroll with Lenis
   useEffect(() => {
     let lenis;
     try {
@@ -59,59 +57,71 @@ export default function App() {
     };
   }, []);
 
+  // Keyboard shortcut for Spotlight (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setSpotlightOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Track active section for dock indicator
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about', 'education', 'skills', 'projects', 'hackathons', 'certificates', 'contact'];
+      let current = 'hero';
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 260 && rect.bottom >= 260) {
+            current = id;
+            break;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const currentCertificate = selectedCertId
     ? certificatesData.find((c) => c.id === selectedCertId)
     : null;
 
-  const handleOpenLightbox = (item, allItems = galleryData) => {
-    setLightboxState({
-      isOpen: true,
-      item,
-      allItems
-    });
-  };
-
-  const handleCloseLightbox = () => {
-    setLightboxState({ isOpen: false, item: null, allItems: [] });
-  };
-
   return (
     <>
-      {/* Subtle Grain Overlay for Luxury Editorial Texture */}
+      {/* Subtle Grain Overlay for Spatial Texture */}
       <div className="grain-overlay" aria-hidden="true" />
 
       {/* Custom Fluid Cursor */}
       <CustomCursor />
 
-      {/* Cinematic Preloader */}
-      <Preloader onComplete={() => setPreloaderDone(true)} />
-
-      {/* Top Navigation */}
-      <Navbar onDownloadCV={() => setCvModalOpen(true)} />
+      {/* Top macOS Menu Bar */}
+      <MenuBar
+        onOpenSpotlight={() => setSpotlightOpen(true)}
+        onDownloadCV={() => setCvModalOpen(true)}
+      />
 
       {/* Main Portfolio Sections */}
-      <main id="main-content">
+      <main id="main-content" style={{ paddingBottom: '80px' }}>
         <Hero onDownloadCV={() => setCvModalOpen(true)} />
         <About />
-        <Education
-          onSelectCertificate={(id) => setSelectedCertId(id)}
-        />
+        <Education />
         <Skills />
         <Projects
           onSelectProject={(project) => setSelectedProject(project)}
         />
-        <Hackathons
-          onSelectCertificate={(id) => setSelectedCertId(id)}
-        />
-        <Sports
-          onSelectCertificate={(id) => setSelectedCertId(id)}
-          onOpenLightbox={(item) => handleOpenLightbox(item, [item])}
-        />
+        <Hackathons />
+        <Sports />
         <Certificates
           onSelectCertificate={(id) => setSelectedCertId(id)}
-        />
-        <Gallery
-          onOpenLightbox={(item, all) => handleOpenLightbox(item, all)}
         />
         <Contact />
       </main>
@@ -119,8 +129,24 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
+      {/* Floating macOS Dock */}
+      <FloatingDock
+        onOpenSpotlight={() => setSpotlightOpen(true)}
+        onDownloadCV={() => setCvModalOpen(true)}
+        activeSection={activeSection}
+      />
+
       {/* Back to Top with Scroll Progress */}
       <BackToTop />
+
+      {/* Spotlight Command Palette (Cmd + K) */}
+      <SpotlightSearch
+        isOpen={spotlightOpen}
+        onClose={() => setSpotlightOpen(false)}
+        onSelectProject={(project) => setSelectedProject(project)}
+        onSelectCertificate={(id) => setSelectedCertId(id)}
+        onDownloadCV={() => setCvModalOpen(true)}
+      />
 
       {/* Modals */}
       <CertificateModal
@@ -132,15 +158,6 @@ export default function App() {
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
       />
-
-      {lightboxState.isOpen && (
-        <LightboxModal
-          item={lightboxState.item}
-          allItems={lightboxState.allItems}
-          onSelect={(newItem) => setLightboxState((prev) => ({ ...prev, item: newItem }))}
-          onClose={handleCloseLightbox}
-        />
-      )}
 
       <CVModal
         isOpen={cvModalOpen}

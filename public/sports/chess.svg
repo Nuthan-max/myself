@@ -35,7 +35,7 @@
   <!-- Content text -->
   <g transform="translate(50, 60)">
     <rect x="0" y="0" width="130" height="26" rx="13" fill="#D7F171"/>
-    <text x="65" y="17" fill="#111111" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">CHESS // RAPID</text>
+    <text x="65" y="17" fill="#111111" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" text-anchor="middle">CHESS // RAPID</text>
     <text x="0" y="65" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Calculated Depth &amp;</text>
     <text x="0" y="100" fill="#B8A1E3" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">Positional Strategy</text>
     <text x="0" y="140" fill="#AAAAAA" font-family="'Inter', sans-serif" font-size="13">Top 8 District Rank • Rapid Championship</text>
@@ -43,6 +43,6 @@
     <text x="0" y="185" fill="#888888" font-family="'Inter', sans-serif" font-size="12">Directly trains algorithmic reasoning and engineering resilience.</text>
     
     <rect x="0" y="220" width="220" height="36" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.1)"/>
-    <text x="15" y="243" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="11">District Rapid • 2022–23</text>
+    <text x="15" y="243" fill="#D7F171" font-family="DM Sans, sans-serif" font-size="11">District Rapid • 2022–23</text>
   </g>
 </svg>

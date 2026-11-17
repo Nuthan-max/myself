@@ -22,7 +22,7 @@ export default function Navbar({ onDownloadCV }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      const sections = ['about', 'education', 'skills', 'projects', 'hackathons', 'sports', 'certificates', 'gallery', 'contact'];
+      const sections = ['about', 'education', 'skills', 'projects', 'hackathons', 'sports', 'certificates', 'contact'];
       let current = 'hero';
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -43,12 +43,11 @@ export default function Navbar({ onDownloadCV }) {
 
   const navLinks = [
     { name: 'About', href: '#about', id: 'about' },
-    { name: 'Journey', href: '#education', id: 'education' },
+    { name: 'Education', href: '#education', id: 'education' },
     { name: 'Skills', href: '#skills', id: 'skills' },
     { name: 'Projects', href: '#projects', id: 'projects' },
     { name: 'Hackathons', href: '#hackathons', id: 'hackathons' },
-    { name: 'Credentials', href: '#certificates', id: 'certificates' },
-    { name: 'Gallery', href: '#gallery', id: 'gallery' }
+    { name: 'Credentials', href: '#certificates', id: 'certificates' }
   ];
 
   return (
@@ -62,10 +61,10 @@ export default function Navbar({ onDownloadCV }) {
         paddingTop: isScrolled ? '0.75rem' : '1.25rem',
         paddingBottom: isScrolled ? '0.75rem' : '1.25rem',
         transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-        backgroundColor: isScrolled ? 'rgba(8, 9, 12, 0.85)' : 'transparent',
+        backgroundColor: isScrolled ? 'var(--bg-surface)' : 'transparent',
         backdropFilter: isScrolled ? 'blur(16px)' : 'none',
         WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent'
+        borderBottom: isScrolled ? '1px solid rgba(85, 91, 77, 0.08)' : '1px solid transparent'
       }}
     >
       <div
@@ -91,25 +90,25 @@ export default function Navbar({ onDownloadCV }) {
             style={{
               width: isScrolled ? '36px' : '40px',
               height: isScrolled ? '36px' : '40px',
-              backgroundColor: '#12141B',
-              border: '1px solid rgba(212, 255, 0, 0.35)',
+              backgroundColor: 'var(--bg-card)',
+              border: '1px solid rgba(139, 154, 110, 0.35)',
               borderRadius: '8px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               transition: 'all 0.3s ease',
-              boxShadow: '0 0 12px rgba(212, 255, 0, 0.15)'
+              boxShadow: '0 0 12px rgba(139, 154, 110, 0.15)'
             }}
           >
             <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
               <path
                 d="M18 46V18L32 36V18M46 18V46L32 28V46"
-                stroke="#D4FF00"
+                stroke="var(--accent-lime)"
                 strokeWidth="5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <circle cx="32" cy="32" r="4" fill="#00F0FF" />
+              <circle cx="32" cy="32" r="4" fill="var(--accent-cyan)" />
             </svg>
           </div>
           <div>
@@ -120,20 +119,20 @@ export default function Navbar({ onDownloadCV }) {
                   fontSize: '0.98rem',
                   fontWeight: 750,
                   letterSpacing: '-0.02em',
-                  color: '#F4F5F8',
+                  color: 'var(--text-primary)',
                   display: 'block',
                   lineHeight: 1.1
                 }}
               >
-                PRATHAMESH
+                NUTHAN G
               </span>
               <span
                 style={{
                   width: '6px',
                   height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: '#D4FF00',
-                  boxShadow: '0 0 6px #D4FF00'
+                  backgroundColor: 'var(--accent-lime)',
+                  boxShadow: '0 0 6px var(--accent-lime)'
                 }}
               />
             </div>
@@ -141,7 +140,7 @@ export default function Navbar({ onDownloadCV }) {
               className="label-mono"
               style={{
                 fontSize: '0.64rem',
-                color: '#8E94A0',
+                color: 'var(--text-secondary)',
                 letterSpacing: '0.04em'
               }}
             >
@@ -158,8 +157,8 @@ export default function Navbar({ onDownloadCV }) {
             alignItems: 'center',
             gap: '0.2rem',
             padding: '0.3rem 0.5rem',
-            backgroundColor: 'rgba(19, 21, 27, 0.75)',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
+            backgroundColor: 'var(--bg-surface)',
+            border: '1px solid rgba(85, 91, 77, 0.08)',
             borderRadius: 'var(--radius-pill)',
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)'
@@ -175,10 +174,10 @@ export default function Navbar({ onDownloadCV }) {
                   padding: '0.4rem 0.9rem',
                   fontSize: '0.84rem',
                   fontWeight: isActive ? 650 : 500,
-                  color: isActive ? '#D4FF00' : '#8E94A0',
+                  color: isActive ? 'var(--accent-lime)' : 'var(--text-secondary)',
                   borderRadius: 'var(--radius-pill)',
-                  backgroundColor: isActive ? 'rgba(212, 255, 0, 0.1)' : 'transparent',
-                  border: `1px solid ${isActive ? 'rgba(212, 255, 0, 0.25)' : 'transparent'}`,
+                  backgroundColor: isActive ? 'rgba(139, 154, 110, 0.1)' : 'transparent',
+                  border: `1px solid ${isActive ? 'rgba(139, 154, 110, 0.25)' : 'transparent'}`,
                   transition: 'all var(--transition-fast)'
                 }}
               >
@@ -230,8 +229,8 @@ export default function Navbar({ onDownloadCV }) {
             display: 'none',
             padding: '0.5rem',
             borderRadius: '8px',
-            backgroundColor: 'rgba(255, 255, 255, 0.06)',
-            color: '#FFFFFF'
+            backgroundColor: 'rgba(85, 91, 77, 0.06)',
+            color: 'var(--text-primary)'
           }}
           className="mobile-nav-toggle"
           aria-label="Toggle menu"
@@ -248,8 +247,8 @@ export default function Navbar({ onDownloadCV }) {
             top: '100%',
             left: 0,
             right: 0,
-            backgroundColor: '#0D0E13',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            backgroundColor: 'var(--bg-surface)',
+            borderBottom: '1px solid rgba(85, 91, 77, 0.1)',
             padding: '1.25rem var(--container-pad)',
             boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
             display: 'flex',
@@ -265,9 +264,9 @@ export default function Navbar({ onDownloadCV }) {
               style={{
                 fontSize: '0.98rem',
                 fontWeight: 600,
-                color: '#F4F5F8',
+                color: 'var(--text-primary)',
                 padding: '0.5rem 0',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
+                borderBottom: '1px solid rgba(85, 91, 77, 0.05)'
               }}
             >
               {link.name}

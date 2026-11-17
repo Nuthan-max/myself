@@ -55,7 +55,7 @@
     background-color: #FFFFFF !important;
     color: #000000 !important;
   }
-  header, footer, .no-print, .custom-cursor-dot, .custom-cursor-follower, .grain-overlay, #hero, #about, #education, #skills, #projects, #hackathons, #sports, #certificates, #gallery, #contact {
+  header, footer, .no-print, .custom-cursor-dot, .custom-cursor-follower, .grain-overlay, #hero, #about, #education, #skills, #projects, #hackathons, #sports, #certificates, #contact {
     display: none !important;
   }
   .modal-overlay {

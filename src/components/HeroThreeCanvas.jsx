@@ -29,16 +29,16 @@ export default function HeroThreeCanvas() {
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const lime = new THREE.Color('#D4FF00');
-    const cyan = new THREE.Color('#00F0FF');
-    const subtle = new THREE.Color('#3A3F4D');
+    const olive = new THREE.Color('#8B9A6E');
+    const beige = new THREE.Color('#EAE2D6');
+    const subtle = new THREE.Color('#73796A');
 
     for (let i = 0; i < particleCount; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 55;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 45;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 30;
 
-      const c = Math.random() > 0.85 ? lime : Math.random() > 0.7 ? cyan : subtle;
+      const c = Math.random() > 0.85 ? olive : Math.random() > 0.7 ? beige : subtle;
       colors[i * 3] = c.r;
       colors[i * 3 + 1] = c.g;
       colors[i * 3 + 2] = c.b;

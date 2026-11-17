@@ -16,11 +16,11 @@
 
   <!-- Lane Markings -->
   <text x="145" y="700" fill="#D7F171" font-family="'Space Grotesk', sans-serif" font-size="28" font-weight="700">LANE 4</text>
-  <text x="145" y="725" fill="#888888" font-family="'JetBrains Mono', monospace" font-size="11">4X100M RELAY • ANCHOR LEG</text>
+  <text x="145" y="725" fill="#888888" font-family="DM Sans, sans-serif" font-size="11">4X100M RELAY • ANCHOR LEG</text>
 
   <!-- Editorial Info Box -->
   <rect x="60" y="80" width="480" height="130" rx="12" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.1)"/>
   <text x="85" y="120" fill="#D7F171" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="700">Athletic Training &amp; Endurance Conditioning</text>
   <text x="85" y="148" fill="#AAAAAA" font-family="'Inter', sans-serif" font-size="13">University Sports Complex • Speed intervals, baton handoff mechanics</text>
-  <text x="85" y="172" fill="#B8A1E3" font-family="'JetBrains Mono', monospace" font-size="12">Silver Medalist • 2023 Season</text>
+  <text x="85" y="172" fill="#B8A1E3" font-family="DM Sans, sans-serif" font-size="12">Silver Medalist • 2023 Season</text>
 </svg>

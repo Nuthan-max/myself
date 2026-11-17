@@ -31,22 +31,23 @@ export default function BackToTop() {
   return (
     <button
       type="button"
+      className="back-to-top-button"
       onClick={scrollToTop}
       aria-label="Back to top"
       style={{
         position: 'fixed',
-        bottom: '2rem',
-        right: '2rem',
+        bottom: 'var(--back-to-top-bottom, 2rem)',
+        right: 'var(--back-to-top-right, 2rem)',
         zIndex: 900,
         width: '48px',
         height: '48px',
         borderRadius: '50%',
-        backgroundColor: '#111111',
-        color: '#F7F6F2',
+        backgroundColor: 'var(--accent-lime)',
+        color: 'var(--text-primary)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
+        boxShadow: '0 8px 24px rgba(57, 61, 48, 0.18)',
         cursor: 'pointer',
         border: 'none',
         transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s',
@@ -70,7 +71,7 @@ export default function BackToTop() {
           cx="24"
           cy="24"
           r="18"
-          stroke="rgba(255,255,255,0.15)"
+          stroke="rgba(85, 91, 77, 0.15)"
           strokeWidth="2.5"
           fill="none"
         />
@@ -78,7 +79,7 @@ export default function BackToTop() {
           cx="24"
           cy="24"
           r="18"
-          stroke="#D7F171"
+          stroke="var(--accent-lime)"
           strokeWidth="2.5"
           fill="none"
           strokeDasharray={circumference}

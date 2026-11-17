@@ -10,7 +10,7 @@
   <rect x="32" y="32" width="736" height="496" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
 
   <text x="400" y="85" fill="#B8A1E3" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="700" text-anchor="middle">WORKSHOP ON CYBER-PHYSICAL SYSTEMS &amp; IOT</text>
-  <text x="400" y="112" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="12" text-anchor="middle">LOVELY PROFESSIONAL UNIVERSITY • SEEE</text>
+  <text x="400" y="112" fill="#D7F171" font-family="DM Sans, sans-serif" font-size="12" text-anchor="middle">LOVELY PROFESSIONAL UNIVERSITY • SEEE</text>
   <line x1="250" y1="130" x2="550" y2="130" stroke="#B8A1E3" stroke-width="1.5"/>
 
   <text x="400" y="180" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="18" font-style="italic" text-anchor="middle">This is to certify that</text>
@@ -20,7 +20,7 @@
   <text x="400" y="300" fill="#CCCCCC" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle">"Microcontroller Sensor Networks, FreeRTOS Multitasking &amp; Edge MQTT Pipelines".</text>
 
   <rect x="300" y="330" width="200" height="42" rx="21" fill="rgba(184, 161, 227, 0.2)" stroke="#B8A1E3"/>
-  <text x="400" y="357" fill="#B8A1E3" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" text-anchor="middle">COMPLETED WITH MERIT</text>
+  <text x="400" y="357" fill="#B8A1E3" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" text-anchor="middle">COMPLETED WITH MERIT</text>
 
   <g transform="translate(60, 420)">
     <line x1="0" y1="50" x2="180" y2="50" stroke="#555555" stroke-width="1"/>
@@ -37,5 +37,5 @@
     <text x="90" y="68" fill="#888888" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">Head of Department</text>
   </g>
 
-  <text x="400" y="515" fill="#666666" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle">CREDENTIAL ID: LPU-SEEE-WS-2024-34 • VERIFIED RECORD</text>
+  <text x="400" y="515" fill="#666666" font-family="DM Sans, sans-serif" font-size="10" text-anchor="middle">CREDENTIAL ID: LPU-SEEE-WS-2024-34 • VERIFIED RECORD</text>
 </svg>

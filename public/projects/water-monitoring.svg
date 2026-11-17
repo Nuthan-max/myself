@@ -31,14 +31,14 @@
     <!-- Submerged sensors -->
     <line x1="40" y1="85" x2="40" y2="150" stroke="#888888" stroke-width="2"/>
     <rect x="32" y="150" width="16" height="30" rx="3" fill="#33c177"/>
-    <text x="60" y="170" fill="#33c177" font-family="'JetBrains Mono', monospace" font-size="9">pH: 7.2 | Turb: 12 NTU</text>
+    <text x="60" y="170" fill="#33c177" font-family="DM Sans, sans-serif" font-size="9">pH: 7.2 | Turb: 12 NTU</text>
   </g>
 
   <!-- Computer Vision Target Detection Bounding Box -->
   <g transform="translate(480, 260)">
     <rect x="0" y="0" width="160" height="95" rx="4" fill="none" stroke="#D7F171" stroke-width="2" stroke-dasharray="6 3"/>
     <rect x="0" y="-22" width="130" height="22" rx="4" fill="#D7F171"/>
-    <text x="8" y="-6" fill="#111111" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">PLASTIC_DEBRIS 94%</text>
+    <text x="8" y="-6" fill="#111111" font-family="DM Sans, sans-serif" font-size="10" font-weight="700">PLASTIC_DEBRIS 94%</text>
     
     <!-- Simulated floating plastic debris shape -->
     <path d="M 40 45 Q 60 30 90 40 Q 120 50 110 65 Q 80 75 50 65 Z" fill="#2d4050" stroke="#7799aa" stroke-width="1.5"/>
@@ -48,12 +48,12 @@
   <!-- Secondary Detection Box -->
   <g transform="translate(360, 200)">
     <rect x="0" y="0" width="90" height="60" rx="3" fill="none" stroke="#B8A1E3" stroke-width="1.5"/>
-    <text x="4" y="-6" fill="#B8A1E3" font-family="'JetBrains Mono', monospace" font-size="9">BIO-ORGANIC 87%</text>
+    <text x="4" y="-6" fill="#B8A1E3" font-family="DM Sans, sans-serif" font-size="9">BIO-ORGANIC 87%</text>
   </g>
 
   <!-- Command Dashboard HUD Top -->
   <rect x="30" y="30" width="420" height="75" rx="10" fill="rgba(10, 20, 30, 0.75)" stroke="rgba(255, 255, 255, 0.1)" backdrop-filter="blur(10px)"/>
-  <text x="50" y="55" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">SIH 2024 AQUA-VISION TELEMETRY</text>
+  <text x="50" y="55" fill="#D7F171" font-family="DM Sans, sans-serif" font-size="12" font-weight="700">SIH 2024 AQUA-VISION TELEMETRY</text>
   <text x="50" y="74" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="11">Real-time River Plastic Detection Pipeline • Team Byte Me</text>
-  <text x="50" y="91" fill="#AAAAAA" font-family="'JetBrains Mono', monospace" font-size="9.5">Model: YOLO-AquaV4 | Ingest Latency: 42ms | GPS: 31.24° N, 75.70° E</text>
+  <text x="50" y="91" fill="#AAAAAA" font-family="DM Sans, sans-serif" font-size="9.5">Model: YOLO-AquaV4 | Ingest Latency: 42ms | GPS: 31.24° N, 75.70° E</text>
 </svg>

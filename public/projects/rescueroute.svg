@@ -73,7 +73,7 @@
 
   <!-- Telemetry HUD -->
   <rect x="30" y="30" width="230" height="65" rx="8" fill="rgba(255, 255, 255, 0.04)" stroke="rgba(255, 255, 255, 0.1)"/>
-  <text x="45" y="52" fill="#D7F171" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600">RESCUEROUTE KERNEL v2.4</text>
-  <text x="45" y="70" fill="#AAAAAA" font-family="'JetBrains Mono', monospace" font-size="10">Reroute Latency: 1.2ms (A* Dynamic)</text>
-  <text x="45" y="84" fill="#AAAAAA" font-family="'JetBrains Mono', monospace" font-size="10">Status: Safe Corridor Active (60fps)</text>
+  <text x="45" y="52" fill="#D7F171" font-family="DM Sans, sans-serif" font-size="11" font-weight="600">RESCUEROUTE KERNEL v2.4</text>
+  <text x="45" y="70" fill="#AAAAAA" font-family="DM Sans, sans-serif" font-size="10">Reroute Latency: 1.2ms (A* Dynamic)</text>
+  <text x="45" y="84" fill="#AAAAAA" font-family="DM Sans, sans-serif" font-size="10">Status: Safe Corridor Active (60fps)</text>
 </svg>

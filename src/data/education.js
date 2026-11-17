@@ -2,51 +2,45 @@ export const educationData = [
   {
     id: "undergraduate",
     period: "2026 — Present",
-    degree: "B.Tech in Electronics & Communication Engineering",
+    degree: "B.Tech in Electronics and Communication Engineering",
     institution: "Lovely Professional University",
     location: "Punjab, India",
-    status: "In Progress",
-    description: "Specializing in circuit design, signal processing, microcontroller architectures, embedded systems, and applied artificial intelligence for real-world cyber-physical deployments.",
+    status: "1st Semester",
+    description: "Currently pursuing a B.Tech in Electronics and Communication Engineering at Lovely Professional University.",
     highlights: [
-      "Core Coursework: Semiconductor Devices, Digital Logic Design, Circuit Theory, Signals & Systems, Python Programming",
-      "Semester Focus Project: AI-Based Structural Health Monitoring System",
-      "Active participant in collegiate hackathons & technical design symposiums"
+      "Admission year: 2026",
+      "Selected semester project: AI-Based Structural Health Monitoring; implementation details to be confirmed"
     ],
-    certificateTitle: "Undergraduate Enrollment & Verification Record",
     badge: "Undergraduate"
   },
   {
     id: "higher-secondary",
-    period: "2023 — 2025",
-    degree: "Higher Secondary Education (PUC / Class 12)",
-    institution: "Karnataka State Board",
+    period: "2025",
+    degree: "Class 12 — Pre-University",
+    institution: "Amrutha Bharathi PU College",
     location: "Karnataka, India",
     status: "Completed",
-    achievement: "92% Academic Distinction",
-    description: "Rigorous scientific foundation with pure Physics, Chemistry, Mathematics, and Computer Science. Distinction earned through sustained academic discipline and practical lab experiments.",
+    achievement: "92%",
+    description: "Completed Class 12 under the Karnataka State Board in 2025.",
     highlights: [
-      "92% Overall Aggregate with distinction across core science & mathematics",
-      "State-level competitive examination preparation and analytical reasoning",
-      "School leadership & science exhibition coordinator"
+      "Board: Karnataka State Board",
+      "Percentage: 92%"
     ],
-    certificateTitle: "Karnataka State Board Higher Secondary Certificate",
-    badge: "92% Distinction"
+    badge: "Class 12"
   },
   {
     id: "secondary",
-    period: "2021 — 2023",
-    degree: "Secondary School Examination (Class 10)",
-    institution: "Central Board of Secondary Education (CBSE)",
+    period: "2023",
+    degree: "Class 10",
+    institution: "Sai Angels",
     location: "India",
     status: "Completed",
-    achievement: "Distinction",
-    description: "Comprehensive secondary education emphasizing analytical mathematics, natural sciences, languages, and early computer literacy.",
+    achievement: "84%",
+    description: "Completed Class 10 under the CBSE board in 2023.",
     highlights: [
-      "Exemplary performance across Mathematics and Science streams",
-      "Winner of regional inter-school science symposiums",
-      "Active engagement in athletic track events and chess competitions"
+      "Board: CBSE",
+      "Percentage: 84%"
     ],
-    certificateTitle: "CBSE All India Secondary School Certificate",
-    badge: "CBSE Distinction"
+    badge: "Class 10"
   }
 ];

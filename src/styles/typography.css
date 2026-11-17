@@ -1,15 +1,59 @@
-/* Unified Modern Typography System */
+/* Consistent defaults for copy, headings, and native controls */
 
 body {
   font-family: var(--font-body);
   color: var(--text-primary);
-  font-size: 0.96rem;
-  line-height: 1.65;
+  font-size: var(--text-body);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Font Families */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 3.8vw, 3.25rem); }
+h3 { font-size: var(--text-card-title); }
+h4 { font-size: clamp(1.08rem, 1rem + 0.3vw, 1.25rem); }
+h5 { font-size: var(--text-body); }
+h6 { font-size: var(--text-small); }
+
+p,
+li,
+figcaption {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.7;
+}
+
+small {
+  font-size: var(--text-caption);
+  line-height: 1.45;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+/* Font-family utilities */
 .font-interface {
   font-family: var(--font-interface);
 }
@@ -18,51 +62,51 @@ body {
   font-family: var(--font-body);
 }
 
-.font-mono {
-  font-family: var(--font-mono);
+.font-annotation {
+  font-family: var(--font-annotation);
 }
 
-/* Headings & Display Scale (Calibrated & Balanced) */
+/* Distinct display and editorial heading styles */
 .display-hero {
-  font-family: var(--font-interface);
-  font-size: clamp(2.1rem, 4vw, 3.5rem);
-  font-weight: 750;
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  color: var(--text-primary);
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+.heading-section {
+  font-family: var(--font-editorial);
+  font-size: var(--text-section-title);
+  font-weight: 600;
   line-height: 1.14;
   letter-spacing: -0.035em;
   color: var(--text-primary);
 }
 
-.display-title {
-  font-family: var(--font-interface);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-  color: var(--text-primary);
-}
-
-.heading-section {
-  font-family: var(--font-interface);
-  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
-  font-weight: 700;
-  line-height: 1.22;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-}
-
 .heading-card {
-  font-family: var(--font-interface);
-  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-  font-weight: 650;
-  line-height: 1.35;
-  letter-spacing: -0.015em;
+  font-family: var(--font-display);
+  font-size: var(--text-card-title);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
 }
 
 /* Technical Badges & Telemetry Labels */
 .label-mono {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font-annotation);
+  font-size: var(--text-caption);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 500;
@@ -70,11 +114,12 @@ body {
 }
 
 .tag-tech {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-family: var(--font-interface);
+  font-size: var(--text-small);
+  font-weight: 500;
   letter-spacing: 0.02em;
   padding: 0.32rem 0.7rem;
-  background-color: rgba(18, 19, 22, 0.04);
+  background-color: rgba(139, 154, 110, 0.08);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   color: var(--text-primary);
@@ -86,26 +131,26 @@ body {
 
 .dark-mode .tag-tech,
 .section-dark .tag-tech {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(139, 154, 110, 0.08);
   border-color: var(--border-dark);
-  color: var(--text-light);
+  color: var(--text-primary);
 }
 
 /* Editorial Body Text */
 .body-lead {
-  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+  font-size: var(--text-lead);
   line-height: 1.68;
   color: var(--text-secondary);
   font-weight: 400;
 }
 
 .body-regular {
-  font-size: 0.94rem;
+  font-size: var(--text-body);
   line-height: 1.65;
   color: var(--text-secondary);
 }
 
 .text-accent-highlight {
-  color: var(--accent-lavender);
+  color: var(--accent-lime);
   font-weight: 600;
 }

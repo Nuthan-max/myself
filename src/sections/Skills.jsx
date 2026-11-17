@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import { skillsData } from '../data/skills';
-import { Code2, Cpu, Wrench, Sparkles, Check, ChevronRight } from 'lucide-react';
+import { Code2, Cpu, Wrench, Sparkles } from 'lucide-react';
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState('programming');
@@ -11,7 +11,7 @@ export default function Skills() {
     { key: 'programming', label: 'Programming', icon: Code2, count: skillsData.programming.skills.length },
     { key: 'electronics', label: 'Electronics', icon: Cpu, count: skillsData.electronics.skills.length },
     { key: 'development', label: 'Development', icon: Wrench, count: skillsData.development.skills.length },
-    { key: 'emerging', label: 'Emerging Tech', icon: Sparkles, count: skillsData.emerging.skills.length },
+    { key: 'emerging', label: 'Interests', icon: Sparkles, count: skillsData.emerging.skills.length },
   ];
 
   const currentCategoryData = skillsData[activeCategory];
@@ -21,9 +21,9 @@ export default function Skills() {
       <div className="container">
         <SectionHeading
           badge="03 // CAPABILITIES"
-          title="Technical Competencies &amp;"
-          highlightWord="Applied Stack."
-          subtitle="Practical hardware, circuit design, and software engineering capabilities developed through laboratory coursework and real builds."
+          title="Technical interests &amp;"
+          highlightWord="exploration."
+          subtitle="Areas of interest and tools explored so far. These entries do not imply advanced proficiency."
         />
 
         {/* Category Switcher Tabs */}
@@ -56,23 +56,23 @@ export default function Skills() {
                   fontFamily: 'var(--font-interface)',
                   fontSize: '0.88rem',
                   fontWeight: isSelected ? 700 : 500,
-                  backgroundColor: isSelected ? '#D4FF00' : 'rgba(255, 255, 255, 0.04)',
-                  color: isSelected ? '#08090C' : '#8E94A0',
-                  border: isSelected ? '1px solid #D4FF00' : '1px solid rgba(255, 255, 255, 0.08)',
-                  boxShadow: isSelected ? '0 0 16px rgba(212, 255, 0, 0.25)' : 'none',
+                  backgroundColor: isSelected ? 'var(--accent-lime)' : 'rgba(85, 91, 77, 0.04)',
+                  color: isSelected ? 'var(--text-primary)' : 'var(--text-secondary)',
+                  border: isSelected ? '1px solid var(--accent-lime)' : '1px solid rgba(85, 91, 77, 0.08)',
+                  boxShadow: isSelected ? '0 0 16px rgba(139, 154, 110, 0.25)' : 'none',
                   transition: 'all var(--transition-fast)',
                   cursor: 'pointer'
                 }}
               >
-                <Icon size={15} color={isSelected ? '#08090C' : 'inherit'} />
+                <Icon size={15} color={isSelected ? 'var(--text-primary)' : 'inherit'} />
                 {cat.label}
                 <span
                   style={{
                     fontSize: '0.7rem',
                     padding: '0.15rem 0.45rem',
                     borderRadius: 'var(--radius-pill)',
-                    backgroundColor: isSelected ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.08)',
-                    color: isSelected ? '#08090C' : '#8E94A0'
+                    backgroundColor: isSelected ? 'rgba(0, 0, 0, 0.2)' : 'rgba(85, 91, 77, 0.08)',
+                    color: isSelected ? 'var(--text-primary)' : 'var(--text-secondary)'
                   }}
                 >
                   {cat.count}
@@ -97,10 +97,10 @@ export default function Skills() {
             gap: '0.5rem'
           }}
         >
-          <span className="label-mono" style={{ color: '#D4FF00' }}>
+          <span className="label-mono" style={{ color: 'var(--accent-lime)' }}>
             SCOPE // {currentCategoryData.category.toUpperCase()}
           </span>
-          <span className="label-mono" style={{ color: '#8E94A0' }}>
+          <span className="label-mono" style={{ color: 'var(--text-secondary)' }}>
             {currentCategoryData.tagline}
           </span>
         </div>
@@ -109,7 +109,7 @@ export default function Skills() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '1.25rem'
           }}
         >
@@ -125,7 +125,7 @@ export default function Skills() {
                   padding: '1.5rem',
                   backgroundColor: 'var(--bg-card)',
                   borderRadius: 'var(--radius-lg)',
-                  border: isHovered ? '1px solid #D4FF00' : '1px solid var(--border-color)',
+                  border: isHovered ? '1px solid var(--accent-lime)' : '1px solid var(--border-color)',
                   transform: isHovered ? 'translateY(-3px)' : 'translateY(0)',
                   transition: 'all var(--transition-normal)'
                 }}
@@ -143,7 +143,7 @@ export default function Skills() {
                     className="heading-card"
                     style={{
                       fontSize: '1.2rem',
-                      color: '#F4F5F8',
+                      color: 'var(--text-primary)',
                       margin: 0
                     }}
                   >
@@ -154,9 +154,9 @@ export default function Skills() {
                     style={{
                       padding: '0.2rem 0.55rem',
                       borderRadius: 'var(--radius-pill)',
-                      backgroundColor: 'rgba(212, 255, 0, 0.12)',
-                      color: '#D4FF00',
-                      border: '1px solid rgba(212, 255, 0, 0.25)',
+                      backgroundColor: 'rgba(139, 154, 110, 0.12)',
+                      color: 'var(--accent-lime)',
+                      border: '1px solid rgba(139, 154, 110, 0.25)',
                       fontWeight: 650,
                       fontSize: '0.68rem'
                     }}
@@ -171,7 +171,7 @@ export default function Skills() {
                   style={{
                     fontSize: '0.9rem',
                     lineHeight: 1.6,
-                    color: '#8E94A0',
+                    color: 'var(--text-secondary)',
                     marginBottom: '1.2rem'
                   }}
                 >
@@ -191,8 +191,7 @@ export default function Skills() {
                       gap: '0.35rem'
                     }}
                   >
-                    <Check size={11} color="#D4FF00" />
-                    APPLIED IMPLEMENTATIONS
+                    EXPOSURE &amp; RELATED AREAS
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
                     {skill.useCases.map((uc) => (
@@ -200,13 +199,13 @@ export default function Skills() {
                         key={uc}
                         style={{
                           fontSize: '0.82rem',
-                          color: '#C5C9D3',
+                          color: 'var(--text-secondary)',
                           display: 'flex',
                           alignItems: 'center',
                           gap: '0.45rem'
                         }}
                       >
-                        <span style={{ color: '#00F0FF' }}>▸</span>
+                        <span style={{ color: 'var(--accent-cyan)' }}>▸</span>
                         <span>{uc}</span>
                       </div>
                     ))}

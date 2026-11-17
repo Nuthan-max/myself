@@ -30,7 +30,7 @@
       <circle cx="260" cy="110" r="18" fill="#353b4d"/>
       <circle cx="300" cy="110" r="14" fill="#353b4d"/>
       <rect x="250" y="160" width="60" height="15" rx="3" fill="#D7F171"/>
-      <text x="280" y="171" fill="#111" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">CH1 ACTIVE</text>
+      <text x="280" y="171" fill="#111" font-family="DM Sans, sans-serif" font-size="8" font-weight="700" text-anchor="middle">CH1 ACTIVE</text>
     </g>
     <!-- BNC probes -->
     <circle cx="60" cy="215" r="10" fill="#111" stroke="#888" stroke-width="2"/>
@@ -49,7 +49,7 @@
     </g>
     <!-- IC Chip -->
     <rect x="40" y="90" width="80" height="40" rx="3" fill="#171717"/>
-    <text x="80" y="115" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">LM358 OP-AMP</text>
+    <text x="80" y="115" fill="#FFFFFF" font-family="DM Sans, sans-serif" font-size="9" text-anchor="middle">LM358 OP-AMP</text>
     <!-- Jumper Wires -->
     <path d="M 35 110 Q 15 150 45 180" fill="none" stroke="#ff4d4d" stroke-width="2.5"/>
     <path d="M 125 110 Q 165 80 180 160" fill="none" stroke="#2575fc" stroke-width="2.5"/>
@@ -57,5 +57,5 @@
   </g>
 
   <text x="100" y="420" fill="#D7F171" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700">UNIVERSITY HARDWARE LAB BENCH 04</text>
-  <text x="100" y="442" fill="#888888" font-family="'JetBrains Mono', monospace" font-size="11">Tektronix 100MHz Dual-Channel DSO • Analog Signal Filtering Verification</text>
+  <text x="100" y="442" fill="#888888" font-family="DM Sans, sans-serif" font-size="11">Tektronix 100MHz Dual-Channel DSO • Analog Signal Filtering Verification</text>
 </svg>

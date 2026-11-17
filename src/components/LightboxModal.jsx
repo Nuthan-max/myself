@@ -61,10 +61,10 @@ export default function LightboxModal({ item, allItems, onSelect, onClose }) {
             position: 'absolute',
             top: '-50px',
             right: '0',
-            color: '#FFFFFF',
+            color: 'var(--text-primary)',
             padding: '0.5rem',
             borderRadius: '50%',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(85, 91, 77, 0.1)',
             cursor: 'pointer',
             transition: 'background-color 0.2s'
           }}
@@ -81,10 +81,10 @@ export default function LightboxModal({ item, allItems, onSelect, onClose }) {
             left: '-60px',
             top: '50%',
             transform: 'translateY(-50%)',
-            color: '#FFFFFF',
+            color: 'var(--text-primary)',
             padding: '0.75rem',
             borderRadius: '50%',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(85, 91, 77, 0.1)',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
@@ -103,10 +103,10 @@ export default function LightboxModal({ item, allItems, onSelect, onClose }) {
             right: '-60px',
             top: '50%',
             transform: 'translateY(-50%)',
-            color: '#FFFFFF',
+            color: 'var(--text-primary)',
             padding: '0.75rem',
             borderRadius: '50%',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(85, 91, 77, 0.1)',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
@@ -125,7 +125,7 @@ export default function LightboxModal({ item, allItems, onSelect, onClose }) {
             overflow: 'hidden',
             backgroundColor: '#111111',
             boxShadow: '0 25px 60px rgba(0,0,0,0.6)',
-            border: '1px solid rgba(255,255,255,0.1)',
+            border: '1px solid rgba(85, 91, 77, 0.1)',
             maxHeight: '75vh',
             width: '100%',
             display: 'flex',
@@ -158,14 +158,14 @@ export default function LightboxModal({ item, allItems, onSelect, onClose }) {
         >
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.25rem' }}>
-              <span className="tag-tech" style={{ backgroundColor: 'rgba(215, 241, 113, 0.2)', borderColor: '#D7F171', color: '#D7F171' }}>
+              <span className="tag-tech" style={{ backgroundColor: 'rgba(139, 154, 110, 0.2)', borderColor: 'var(--accent-lime)', color: 'var(--accent-lime)' }}>
                 {item.category}
               </span>
-              <span className="label-mono" style={{ color: '#888888' }}>
+              <span className="label-mono" style={{ color: 'var(--text-secondary)' }}>
                 {item.year}
               </span>
             </div>
-            <h4 className="heading-card" style={{ color: '#FFFFFF', fontSize: '1.25rem' }}>
+            <h4 className="heading-card" style={{ color: 'var(--text-primary)', fontSize: '1.25rem' }}>
               {item.title}
             </h4>
             <p style={{ color: '#AAAAAA', fontSize: '0.9rem', marginTop: '0.35rem' }}>
